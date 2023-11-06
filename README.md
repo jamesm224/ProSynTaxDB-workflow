@@ -4,7 +4,7 @@ Hey Future Researchers who use this!
 
 This should hopefully be an easy to replicate usage.
 
-1. Create a conda/mamba environment with the following packages:
+1. Create a conda/mamba environment (biopython_project) with the following packages:
 (These were the versions we used, but other verisions may work)
     1. blast v2.14.0
     2. seqtk v1.4
