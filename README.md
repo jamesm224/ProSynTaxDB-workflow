@@ -24,8 +24,10 @@ This should hopefully be an easy to replicate usage.
     5. 04_fasttree.slurm
     6. fasta_to_phyliprelaxed.py
     7. motherboard_script.sh
+  
+4. Run chmod +x motherboard_script.sh (ensure this file is executable)
 
-4. Update the motherboard_script.sh and make sure all appropriate files are present 
+5. Update the motherboard_script.sh and make sure all appropriate files are present 
 (Please include the full path of each variable)
     1. WORKDIR - working directory
     2. CYCOGBLASTDIR - directory with cycogs
@@ -39,11 +41,11 @@ This should hopefully be an easy to replicate usage.
     8. CYCOGANNOTATIONS - CyCOG annotations as a txt file (should be present in info directory)
         -OPTIONAL - copy CyCOG faa and make logs directory for outputs
 
-5. Run the motherboard_script.sh script first then use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes
+6. Run the motherboard_script.sh script first then use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes
 
-6. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny!
+7. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny!
     1. The Fasttree settings are easily changeable too!
 
-7. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
+8. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
 
 Good luck!
