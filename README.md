@@ -1,7 +1,5 @@
 # gorg_db_update
-Hey Future Researchers who use this!
-
-This should hopefully be an easy to replicate usage.
+Hey Future Researchers who use this! Here is the scripts used to generate and annotate pro and syn phylogenetic trees from the core genes of these elements! This should hopefully be an easy to replicate usage.
 
 ![temp_pro (1)](https://github.com/jamesm224/gorg_db_update/assets/86495895/48cbba5f-2d71-40bb-892a-9427f61c5736)
 
