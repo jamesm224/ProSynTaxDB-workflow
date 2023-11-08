@@ -43,7 +43,7 @@ Dependencies (These were the versions we used, but other verisions may work):
 
 6. Update the main_run.sh and make sure all appropriate files are present: 
 
-        (Please include the full path of each variable)
+        #Please include the full path of each variable
     
         1. WORKDIR - working directory
         2. CYCOGBLASTDIR - directory with cycogs
@@ -66,12 +66,12 @@ Dependencies (These were the versions we used, but other verisions may work):
         ./main_run.sh
 
 8. Then download the output alignments_directory, and use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes:
-9. 
-10. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny (customize settings as desired):
+   
+9. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny (customize settings as desired):
 
             sbatch 04_fasttree.slurm
 
-11. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
+10. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
 
 
 Good luck!
