@@ -1,4 +1,4 @@
-# Pro/Syn Core Gene Alignment Pipeline (DRAFT)
+# Pro/Syn Core Gene Alignment Pipeline (DRAFT - Unsure what to title this project)
 Hey Future Researchers who use this! Here are the code repository for the updated GORG database (or pro/syn annotation database)!
 
 TEMP FIGURE
