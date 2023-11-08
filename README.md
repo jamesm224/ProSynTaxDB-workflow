@@ -4,14 +4,20 @@ Hey Future Researchers who use this!
 
 This should hopefully be an easy to replicate usage.
 
-1. Create a conda/mamba environment (biopython_project) with the following packages:
-(These were the versions we used, but other verisions may work)
+Dependencies (These were the versions we used, but other verisions may work):
     1. blast v2.14.0
     2. seqtk v1.4
     3. clustalo v1.2.4
     4. biopython v1.81
     5. fasttree v2.1.11
+    
+1. Install Conda/Mamba Environment:
+conda create -n gorg_database_temp_name
+conda activate gorg_database_temp_name
+conda install -c conda-forge biopython=1.81
+conda install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
 
+2. Clone repository 
 3. Ensure that the following files are present in a script directory:
     1. 01_blastp.slurm
     2. 01_blastp_extended_genomes.slurm (OPTIONAL)
