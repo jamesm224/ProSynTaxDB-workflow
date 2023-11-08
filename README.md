@@ -66,7 +66,7 @@ e. fasttree v2.1.11
 6. Run the script first (a optional renaming script can be run 03_renamed_alignments.slurm to fix naming errors)
 
         sbatch main_run.sh
-OR
+            OR
 
         ./main_run.sh
 
