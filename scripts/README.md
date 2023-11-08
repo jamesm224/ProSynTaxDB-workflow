@@ -19,7 +19,7 @@ Dependencies (These were the versions we used, but other verisions may work):
 
        mamba install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
 
-2. Clone repository: (still in progress)
+2. Clone repository: (still in progress):
 
        git clone https://github.com/jamesm224/gorg_db_update/
    
@@ -41,8 +41,9 @@ Dependencies (These were the versions we used, but other verisions may work):
 
        chmod +x main_run.sh
 
-6. Update the main_run.sh and make sure all appropriate files are present 
-(Please include the full path of each variable)
+6. Update the main_run.sh and make sure all appropriate files are present: 
+
+        (Please include the full path of each variable)
     
         1. WORKDIR - working directory
         2. CYCOGBLASTDIR - directory with cycogs
@@ -56,7 +57,7 @@ Dependencies (These were the versions we used, but other verisions may work):
         8. CYCOGANNOTATIONS - CyCOG annotations as a txt file (should be present in info directory)
             -OPTIONAL - copy CyCOG faa and make logs directory for outputs
 
-7. Run the script first (a optional renaming script can be run 03_renamed_alignments.slurm to fix naming errors)
+7. Run the script first (a optional renaming script can be run 03_renamed_alignments.slurm to fix naming errors):
 
         sbatch main_run.sh
    
@@ -64,12 +65,13 @@ Dependencies (These were the versions we used, but other verisions may work):
    
         ./main_run.sh
 
-8. Then download the output alignments_directory, and use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes
-9. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny (customize settings as desired)
+8. Then download the output alignments_directory, and use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes:
+9. 
+10. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny (customize settings as desired):
 
             sbatch 04_fasttree.slurm
 
-10. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
+11. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
 
 
 Good luck!
