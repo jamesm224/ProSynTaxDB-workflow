@@ -66,16 +66,18 @@ e. fasttree v2.1.11
 6. Run the script first (a optional renaming script can be run 03_renamed_alignments.slurm to fix naming errors)
 
         sbatch main_run.sh
+   
             OR
+   
         ./main_run.sh
 
-7. Then download the output alignments_directory, and use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes
-8. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny!
+8. Then download the output alignments_directory, and use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes
+9. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny!
     1. The Fasttree settings are easily changeable too!
 
             sbatch 04_fasttree.slurm
 
-9. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
+10. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
 
 
 Good luck!
