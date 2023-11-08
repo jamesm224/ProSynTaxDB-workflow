@@ -28,7 +28,7 @@ e. fasttree v2.1.11
 
        mamba install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
 
-2. Clone repository:
+2. Clone repository: (still in progress)
 
        git clone https://github.com/jamesm224/gorg_db_update/
    
