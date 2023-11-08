@@ -3,7 +3,7 @@ Hey Future Researchers who use this!
 
 This should hopefully be an easy to replicate usage.
 
-![temp_pro](https://github.com/jamesm224/gorg_db_update/assets/86495895/a10dc914-3c4a-4341-898b-2f6b1994bc61)
+![temp_pro (1)](https://github.com/jamesm224/gorg_db_update/assets/86495895/48cbba5f-2d71-40bb-892a-9427f61c5736)
 
 Dependencies (These were the versions we used, but other verisions may work):
 
