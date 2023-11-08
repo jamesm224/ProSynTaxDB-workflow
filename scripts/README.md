@@ -40,7 +40,7 @@ Dependencies (These were the versions we used, but other verisions may work):
 5. Prepare scripts for running (ensure this file is executable):
 
        chmod +x main_run.sh
-6. Examine SBATCH headers in each file allocate storage to your specific allocation
+6. Examine SBATCH headers in each file to allocate storage to your specific allocation
    
 7. Update the main_run.sh and make sure all appropriate files are present: 
 
