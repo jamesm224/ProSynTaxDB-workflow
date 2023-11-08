@@ -17,7 +17,9 @@ conda activate gorg_database_temp_name
 conda install -c conda-forge biopython=1.81
 conda install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
 
-2. Clone repository 
+2. Clone repository:
+   git clone https://github.com/jamesm224/gorg_db_update/
+   
 3. Ensure that the following files are present in a script directory:
     1. 01_blastp.slurm
     2. 01_blastp_extended_genomes.slurm (OPTIONAL)
@@ -29,11 +31,11 @@ conda install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
     4. 03_renamed_alignments.slurm (OPTIONAL)
     5. 04_fasttree.slurm
     6. fasta_to_phyliprelaxed.py
-    7. motherboard_script.sh
+    7. main_run.sh
   
-4. Run chmod +x motherboard_script.sh (ensure this file is executable)
+5. Run chmod +x main_run (ensure this file is executable)
 
-5. Update the motherboard_script.sh and make sure all appropriate files are present 
+6. Update the main_run.sh and make sure all appropriate files are present 
 (Please include the full path of each variable)
     1. WORKDIR - working directory
     2. CYCOGBLASTDIR - directory with cycogs
@@ -47,11 +49,11 @@ conda install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
     8. CYCOGANNOTATIONS - CyCOG annotations as a txt file (should be present in info directory)
         -OPTIONAL - copy CyCOG faa and make logs directory for outputs
 
-6. Run the motherboard_script.sh script first then use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes
+7. Run the main_run.sh script first then use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes
 
-7. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny!
+8. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny!
     1. The Fasttree settings are easily changeable too!
 
-8. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
+9. Hopefully this a fairly easy and streamline pipeline but reach out to Paul or James for any questions!
 
 Good luck!
