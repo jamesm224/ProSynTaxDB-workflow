@@ -5,11 +5,12 @@ Hey Future Researchers who use this!
 This should hopefully be an easy to replicate usage.
 
 Dependencies (These were the versions we used, but other verisions may work):
-    1. blast v2.14.0
-    2. seqtk v1.4
-    3. clustalo v1.2.4
-    4. biopython v1.81
-    5. fasttree v2.1.11
+
+1. blast v2.14.0
+2. seqtk v1.4
+3. clustalo v1.2.4
+4. biopython v1.81
+5. fasttree v2.1.11
     
 1. Install Conda/Mamba Environment:
 
