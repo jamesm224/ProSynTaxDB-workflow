@@ -65,8 +65,7 @@ Dependencies (These were the versions we used, but other verisions may work):
         ./main_run.sh
 
 8. Then download the output alignments_directory, and use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes
-9. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny!
-    1. The Fasttree settings are easily changeable too!
+9. Process this newly generate .fas file into 04_fasttree.slurm to create your phylogeny (customize settings as desired)
 
             sbatch 04_fasttree.slurm
 
