@@ -12,8 +12,8 @@ TEMP FIGURE
 2. Info - contains important files and lists
 3. Test - contains test examples for running the scripts
 
-# How to Use Pipeline
+# How to Use Database
 
-TBD
+TBD (Something with Kaiju or Diamond most likely)
 
 
