@@ -1,5 +1,5 @@
 # Pro/Syn Core Gene Alignment Pipeline (DRAFT)
-Hey Future Researchers who use this! Here are the code repository used to generate/annotate Marine Prochlorococcus and Synechococcus phylogenetic trees like the figure below from the core genes of these elements!
+Hey Future Researchers who use this! Here are the code repository for the updated GORG database (or pro/syn annotation database)!
 
 TEMP FIGURE
 
