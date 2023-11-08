@@ -19,7 +19,6 @@ Dependencies (These were the versions we used, but other verisions may work):
     
 1. Install Conda/Mamba Environment:
 
-
        mamba create -n gorg_database_temp_name
    
        mamba activate gorg_database_temp_name
@@ -28,11 +27,11 @@ Dependencies (These were the versions we used, but other verisions may work):
 
        mamba install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
 
-2. Clone repository: (still in progress)
+3. Clone repository: (still in progress)
 
        git clone https://github.com/jamesm224/gorg_db_update/
    
-3. Ensure that the following files are present in a script directory:
+4. Ensure that the following files are present in a script directory:
     1. 01_blastp.slurm
     2. 01_blastp_extended_genomes.slurm (OPTIONAL)
         - Optional scripts for any jobs with more than 500 genomes
@@ -45,11 +44,11 @@ Dependencies (These were the versions we used, but other verisions may work):
     6. fasta_to_phyliprelaxed.py
     7. main_run.sh
   
-4. Prepare scripts for running (ensure this file is executable):
+5. Prepare scripts for running (ensure this file is executable):
 
        chmod +x main_run.sh
 
-5. Update the main_run.sh and make sure all appropriate files are present 
+6. Update the main_run.sh and make sure all appropriate files are present 
 (Please include the full path of each variable)
     1. WORKDIR - working directory
     2. CYCOGBLASTDIR - directory with cycogs
@@ -63,7 +62,7 @@ Dependencies (These were the versions we used, but other verisions may work):
     8. CYCOGANNOTATIONS - CyCOG annotations as a txt file (should be present in info directory)
         -OPTIONAL - copy CyCOG faa and make logs directory for outputs
 
-6. Run the script first (a optional renaming script can be run 03_renamed_alignments.slurm to fix naming errors)
+7. Run the script first (a optional renaming script can be run 03_renamed_alignments.slurm to fix naming errors)
 
         sbatch main_run.sh
    
