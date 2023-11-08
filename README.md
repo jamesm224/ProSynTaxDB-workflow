@@ -14,13 +14,13 @@ Dependencies (These were the versions we used, but other verisions may work):
 1. Install Conda/Mamba Environment:
 
 
-       conda create -n gorg_database_temp_name
+       mamba create -n gorg_database_temp_name
    
-       conda activate gorg_database_temp_name
+       mamba activate gorg_database_temp_name
 
-       conda install -c conda-forge biopython=1.81
+       mamba install -c conda-forge biopython=1.81
 
-       conda install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
+       mamba install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
 
 2. Clone repository:
 
