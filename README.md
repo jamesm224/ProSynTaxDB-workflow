@@ -12,11 +12,13 @@ Dependencies (These were the versions we used, but other verisions may work):
     5. fasttree v2.1.11
     
 1. Install Conda/Mamba Environment:
+
+'''
 conda create -n gorg_database_temp_name
 conda activate gorg_database_temp_name
 conda install -c conda-forge biopython=1.81
 conda install -c bioconda blast=2.14.0 seqtk=1.4 clustalo=1.2.4 fasttree=2.1.11
-
+'''
 2. Clone repository:
    git clone https://github.com/jamesm224/gorg_db_update/
    
