@@ -1,5 +1,5 @@
 # gorg_db_update
-Hey Future Researchers who use this! Here is the scripts used to generate and annotate pro and syn phylogenetic trees from the core genes of these elements! This should hopefully be an easy to replicate usage.
+Hey Future Researchers who use this! Here are the scripts used to generate/annotate Marine Prochlorococcus and Synechococcus phylogenetic trees like the figure below from the core genes of these elements! This should hopefully be an easy to replicate usage.
 
 ![temp_pro (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/c7b55bad-612a-4d8f-874e-4b1569f18fe3)
 
