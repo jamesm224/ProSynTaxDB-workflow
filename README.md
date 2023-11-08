@@ -67,7 +67,6 @@ e. fasttree v2.1.11
 
         sbatch main_run.sh
             OR
-
         ./main_run.sh
 
 7. Then download the output alignments_directory, and use MEGA (concatanate sequence alignments function) to generate a fasta sequence of all genomes
