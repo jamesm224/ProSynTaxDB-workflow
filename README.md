@@ -35,16 +35,16 @@ Dependencies (These were the versions we used, but other verisions may work):
    
 4. Ensure that the following files are present in a script directory:
     1. 01_blastp.slurm
-    2. 01_blastp_extended_genomes.slurm (OPTIONAL)
-        - Optional scripts for any jobs with more than 500 genomes
-        - Copy of 01_blastp.slurm (if used must add additional 0#_completion_flag.txts to pipeline)
-    3. 02_clustalo.slurm
         - The number of files you want to run should likely be adjusted for your own jobs
         - #SBATCH --array=1-1%1
-    4. 03_renamed_alignments.slurm (OPTIONAL)
-    5. 04_fasttree.slurm
-    6. fasta_to_phyliprelaxed.py
-    7. main_run.sh
+    3. 01_blastp_extended_genomes.slurm (OPTIONAL)
+        - Optional scripts for any jobs with more than 500 genomes
+        - Copy of 01_blastp.slurm (if used must add additional 0#_completion_flag.txts to pipeline)
+    4. 02_clustalo.slurm
+    5. 03_renamed_alignments.slurm (OPTIONAL)
+    6. 04_fasttree.slurm
+    7. fasta_to_phyliprelaxed.py
+    8. main_run.sh
   
 5. Prepare scripts for running (ensure this file is executable):
 
