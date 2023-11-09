@@ -3,11 +3,11 @@ Hey Future Researchers who use this! Here are the scripts used to generate/annot
 
 Dependencies (These were the versions we used, but other verisions may work):
 
-    a. blast v2.14.0
-    b. seqtk v1.4
-    c. clustalo v1.2.4
-    d. biopython v1.81
-    e. fasttree v2.1.11
+        a. blast v2.14.0
+        b. seqtk v1.4
+        c. clustalo v1.2.4
+        d. biopython v1.81
+        e. fasttree v2.1.11
 
 1. Install Conda/Mamba Environment:
 
