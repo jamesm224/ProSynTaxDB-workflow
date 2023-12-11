@@ -1,4 +1,4 @@
-# Updated Pro/Syn Database (TEMP NAME)
+# GORG v2 (TEMP NAME)
 
 Hey Future Researchers who use this! Here are the code repository for the updated GORG database (or pro/syn annotation database)!
 
