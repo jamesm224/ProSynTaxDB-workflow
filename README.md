@@ -1,8 +1,8 @@
-# GORG v2 (TEMP NAME)
+# GORG-AMZ Database
 
 Hey Future Researchers who use this! Here are the code repository for the updated GORG database (or pro/syn annotation database)!
 
-TEMP FIGURE
+TEMPORARY FIGURE
 
 ![temp_pro (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/c7b55bad-612a-4d8f-874e-4b1569f18fe3)
 
