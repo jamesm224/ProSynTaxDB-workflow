@@ -1,0 +1,424 @@
+CyCOG_60000037 92 DNA-directed RNA polymerase subunit beta'
+CyCOG_60000039 92 glutamate synthase (ferredoxin)
+CyCOG_60000041 92 cytochrome c oxidase subunit 1
+CyCOG_60000049 92 translation elongation factor 2 (EF-2/EF-G)
+CyCOG_60000054 92 competence/damage-inducible protein cinA
+CyCOG_60000056 92 3-isopropylmalate dehydratase, large subunit
+CyCOG_60000060 92 3-isopropylmalate dehydratase, small subunit
+CyCOG_60000067 92 cytochrome c oxidase subunit 2
+CyCOG_60000074 92 serine hydroxymethyltransferase
+CyCOG_60000077 92 cytochrome c oxidase subunit 3
+CyCOG_60000079 92 poly(A) polymerase
+CyCOG_60000083 92 photosystem II PsbJ protein
+CyCOG_60000086 92 Predicted dehydrogenase
+CyCOG_60000087 92 photosystem I P700 chlorophyll a apoprotein A1
+CyCOG_60000090 92 protoporphyrin IX magnesium-chelatase
+CyCOG_60000091 92 Uncharacterized protein
+CyCOG_60000094 92 Hemolysin, contains CBS domains
+CyCOG_60000095 92 arginine decarboxylase
+CyCOG_60000098 92 4-hydroxy-3-methylbut-2-enyl diphosphate reductase
+CyCOG_60000104 92 Ycf66 protein N-terminus
+CyCOG_60000105 92 ATP-dependent Clp protease ATP-binding subunit ClpX
+CyCOG_60000108 92 DNA polymerase-3 subunit gamma/tau
+CyCOG_60000111 92 chorismate synthase
+CyCOG_60000116 92 3-oxoacyl-[acyl-carrier-protein] synthase II
+CyCOG_60000120 92 2-methyl-6-solanesyl-1,4-benzoquinol methyltransferase
+CyCOG_60000136 92 sulfate adenylyltransferase
+CyCOG_60000137 92 ribosomal large subunit pseudouridine synthase D
+CyCOG_60000140 92 ribonuclease J
+CyCOG_60000145 92 dihydrodipicolinate synthase
+CyCOG_60000146 92 ATP-dependent Lon protease
+CyCOG_60000147 92 conserved hypothetical protein, cofD-related
+CyCOG_60000151 92 photosystem II cytochrome b559 subunit alpha
+CyCOG_60000153 92 NADH dehydrogenase subunit B
+CyCOG_60000155 92 alanine racemase
+CyCOG_60000156 92 histidinol-phosphate aminotransferase
+CyCOG_60000159 92 cob(I)yrinic acid a,c-diamide adenosyltransferase
+CyCOG_60000161 92 peptidoglycan glycosyltransferase
+CyCOG_60000164 92 Rubredoxin
+CyCOG_60000165 92 SSU ribosomal protein S10P
+CyCOG_60000166 92 nucleoside diphosphate kinase
+CyCOG_60000167 92 porphobilinogen synthase
+CyCOG_60000171 92 two component transcriptional regulator, LuxR family
+CyCOG_60000173 92 hypothetical protein
+CyCOG_60000180 92 Chlorophyll A-B binding protein
+CyCOG_60000181 92 uncharacterized protein
+CyCOG_60000182 92 NADH dehydrogenase subunit A
+CyCOG_60000184 92 DNA-directed RNA polymerase subunit alpha
+CyCOG_60000185 92 hypothetical protein
+CyCOG_60000188 92 Tetratricopeptide repeat-containing protein
+CyCOG_60000189 92 NADH dehydrogenase subunit D
+CyCOG_60000190 92 histidinol dehydrogenase
+CyCOG_60000192 92 prephenate dehydratase
+CyCOG_60000193 92 riboflavin synthase alpha chain
+CyCOG_60000197 92 pyruvate dehydrogenase E2 component (dihydrolipoamide acetyltransferase)
+CyCOG_60000198 92 putative peptidoglycan lipid II flippase
+CyCOG_60000205 92 RNase H-fold protein, predicted Holliday junction resolvase
+CyCOG_60000208 92 AbrB-like transcriptional regulator
+CyCOG_60000209 92 probable rRNA maturation factor
+CyCOG_60000210 92 Ras superfamily GTP-binding protein YlqF
+CyCOG_60000211 92 Radical SAM superfamily enzyme YgiQ, UPF0313 family
+CyCOG_60000212 92 Protein of unknown function (DUF561)
+CyCOG_60000214 92 dihydroxyacid dehydratase
+CyCOG_60000216 92 precorrin-3 methyltransferase
+CyCOG_60000220 92 2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase
+CyCOG_60000221 92 SSU ribosomal protein S11P
+CyCOG_60000223 92 fructokinase
+CyCOG_60000224 92 CYTH domain-containing protein
+CyCOG_60000225 92 CTP synthase
+CyCOG_60000227 92 amidohydrolase
+CyCOG_60000229 92 RNA polymerase primary sigma factor
+CyCOG_60000231 92 Predicted unusual protein kinase regulating ubiquinone biosynthesis, AarF/ABC1/UbiB family
+CyCOG_60000235 92 Protein of unknown function (DUF3146)
+CyCOG_60000237 92 DNA-binding transcriptional regulator, LysR family
+CyCOG_60000240 92 aspartoacylase
+CyCOG_60000241 92 protein translocase subunit secY/sec61 alpha
+CyCOG_60000243 92 apocytochrome f
+CyCOG_60000247 92 NADH dehydrogenase subunit M
+CyCOG_60000249 92 Uncharacterized conserved protein YacL, contains PIN and TRAM domains
+CyCOG_60000253 92 diacylglycerol kinase (ATP)
+CyCOG_60000255 92 NADH dehydrogenase subunit K
+CyCOG_60000256 92 peptidyl-tRNA hydrolase
+CyCOG_60000257 92 anthranilate synthase, component II
+CyCOG_60000259 92 glutathione synthase
+CyCOG_60000260 92 Protein of unknown function (DUF1997)
+CyCOG_60000261 92 thiamine-phosphate kinase
+CyCOG_60000262 92 NAD+ kinase
+CyCOG_60000263 92 nicotinate-nucleotide pyrophosphorylase [carboxylating]
+CyCOG_60000264 92 precorrin-4 C11-methyltransferase
+CyCOG_60000265 92 hydroxymethylbilane synthase
+CyCOG_60000267 92 magnesium transporter
+CyCOG_60000268 92 ABC-2 type transport system permease protein
+CyCOG_60000272 92 citrate synthase
+CyCOG_60000274 92 Adenylosuccinate lyase
+CyCOG_60000278 92 Predicted arabinose efflux permease, MFS family
+CyCOG_60000280 92 Protein of unknown function (DUF3155)
+CyCOG_60000281 92 NADH dehydrogenase subunit J
+CyCOG_60000282 92 ATP-dependent Clp protease, protease subunit
+CyCOG_60000285 92 hypothetical protein
+CyCOG_60000287 92 SSU ribosomal protein S1P
+CyCOG_60000299 92 1,4-dihydroxy-2-naphthoyl-CoA hydrolase
+CyCOG_60000300 92 cell division topological specificity factor MinE
+CyCOG_60000301 92 SSU ribosomal protein S5P
+CyCOG_60000302 92 condensin subunit ScpA
+CyCOG_60000306 92 folate-binding protein YgfZ
+CyCOG_60000315 92 SSU ribosomal protein S13P
+CyCOG_60000316 92 bacterial translation initiation factor 3 (bIF-3)
+CyCOG_60000317 92 phosphate:acyl-[acyl carrier protein] acyltransferase
+CyCOG_60000320 92 beta-carotene hydroxylase
+CyCOG_60000322 92 epoxyqueuosine reductase
+CyCOG_60000325 92 NAD+ synthase (glutamine-hydrolysing)
+CyCOG_60000329 92 LSU ribosomal protein L13P
+CyCOG_60000330 92 LSU ribosomal protein L2P
+CyCOG_60000334 92 hypothetical protein
+CyCOG_60000336 92 Protein of unknown function (DUF3172)
+CyCOG_60000339 92 3-oxoacyl-[acyl-carrier-protein] synthase III
+CyCOG_60000340 92 1,2-diacylglycerol 3-beta-glucosyltransferase
+CyCOG_60000345 92 coproporphyrinogen oxidase
+CyCOG_60000347 92 tRNA uridine 5-carboxymethylaminomethyl modification enzyme
+CyCOG_60000350 92 LSU ribosomal protein L18P
+CyCOG_60000351 92 SSU ribosomal protein S9P
+CyCOG_60000352 92 ATP synthase F1 subcomplex epsilon subunit
+CyCOG_60000354 92 translation elongation factor P (EF-P)
+CyCOG_60000360 92 zeta-carotene desaturase
+CyCOG_60000371 92 SSU ribosomal protein S19P
+CyCOG_60000372 92 LSU ribosomal protein L6P
+CyCOG_60000374 92 imidazoleglycerol-phosphate dehydratase
+CyCOG_60000375 92 LSU ribosomal protein L17P
+CyCOG_60000376 92 cell division protein FtsZ
+CyCOG_60000378 92 glutamate-1-semialdehyde 2,1-aminomutase
+CyCOG_60000379 92 phospholipid/cholesterol/gamma-HCH transport system ATP-binding protein
+CyCOG_60000381 92 glyceraldehyde 3-phosphate dehydrogenase (NADP+)
+CyCOG_60000384 92 release factor glutamine methyltransferase
+CyCOG_60000388 92 UDP-galactopyranose mutase
+CyCOG_60000395 92 DNA polymerase I
+CyCOG_60000397 92 LSU ribosomal protein L22P
+CyCOG_60000398 92 Polyketide cyclase / dehydrase and lipid transport
+CyCOG_60000400 92 Sec-independent protein translocase TatC
+CyCOG_60000402 92 dethiobiotin synthase
+CyCOG_60000404 92 Pimeloyl-ACP methyl ester carboxylesterase
+CyCOG_60000405 92 Xaa-Pro aminopeptidase
+CyCOG_60000407 92 acetyl-CoA carboxylase carboxyltransferase subunit alpha
+CyCOG_60000410 92 ATP-binding protein involved in chromosome partitioning
+CyCOG_60000411 92 Phosphopantothenate-cysteine ligase /Phosphopantothenoylcysteine decarboxylase
+CyCOG_60000412 92 pantoate ligase / cytidylate kinase
+CyCOG_60000414 92 DNA gyrase subunit A
+CyCOG_60000417 92 LSU ribosomal protein L11P
+CyCOG_60000419 92 glutaredoxin 3
+CyCOG_60000421 92 LSU ribosomal protein L31P
+CyCOG_60000422 92 protein tyrosine phosphatase
+CyCOG_60000425 92 5-(carboxyamino)imidazole ribonucleotide mutase
+CyCOG_60000426 92 4-hydroxybenzoate solanesyltransferase
+CyCOG_60000427 92 thiamine-phosphate diphosphorylase
+CyCOG_60000429 92 N-acetylglutamate kinase
+CyCOG_60000431 92 pyruvate dehydrogenase E1 component alpha subunit
+CyCOG_60000432 92 Dihydropteroate synthase
+CyCOG_60000433 92 Glutamate or tyrosine decarboxylase
+CyCOG_60000435 92 Protein of unknown function (DUF3181)
+CyCOG_60000442 92 dihydroorotate oxidase A
+CyCOG_60000443 92 Protein of unknown function (DUF3529)
+CyCOG_60000444 92 Tetratricopeptide repeat-containing protein
+CyCOG_60000449 92 RNA polymerase primary sigma factor
+CyCOG_60000450 92 adenylylsulfate kinase
+CyCOG_60000451 92 tRNA dimethylallyltransferase
+CyCOG_60000454 92 UPF0176 protein
+CyCOG_60000455 92 Cystathionine beta-lyase family protein involved in aluminum resistance
+CyCOG_60000459 92 membrane protease FtsH catalytic subunit
+CyCOG_60000464 92 LSU ribosomal protein L5P
+CyCOG_60000466 92 RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+CyCOG_60000468 92 LSU ribosomal protein L1P
+CyCOG_60000469 92 TatD DNase family protein
+CyCOG_60000470 92 ribonuclease HI
+CyCOG_60000472 92 sodium/proton antiporter, CPA1 family
+CyCOG_60000475 92 UDP-N-acetylmuramate dehydrogenase
+CyCOG_60000476 92 DNA polymerase III, delta subunit
+CyCOG_60000481 92 Sugar or nucleoside kinase, ribokinase family
+CyCOG_60000482 92 30S ribosomal protein 3
+CyCOG_60000487 92 argininosuccinate lyase
+CyCOG_60000488 92 DNA topoisomerase I
+CyCOG_60000490 92 hypothetical protein
+CyCOG_60000491 92 protein of unknown function (DUF1818)
+CyCOG_60000492 92 cell division inhibitor SepF
+CyCOG_60000493 92 LSU ribosomal protein L9P
+CyCOG_60000497 92 ribonuclease D
+CyCOG_60000498 92 transcription antitermination protein nusG
+CyCOG_60000503 92 alanine-glyoxylate aminotransferase apoenzyme
+CyCOG_60000509 92 outer membrane protein insertion porin family
+CyCOG_60000518 92 YlqD protein
+CyCOG_60000520 92 1-acyl-sn-glycerol-3-phosphate acyltransferase
+CyCOG_60000521 92 Beta-lactamase enzyme family protein
+CyCOG_60000522 92 tyrosyl-tRNA synthetase
+CyCOG_60000523 92 peptide/nickel transport system permease protein
+CyCOG_60000529 92 L-threonine synthase
+CyCOG_60000530 92 uroporphyrinogen-III synthase
+CyCOG_60000531 92 Predicted membrane protein (DUF2232)
+CyCOG_60000535 92 prolyl-tRNA synthetase
+CyCOG_60000537 92 Rhodanese-related sulfurtransferase
+CyCOG_60000538 92 SSU ribosomal protein S8P
+CyCOG_60000539 92 hypothetical protein
+CyCOG_60000541 92 hypothetical protein
+CyCOG_60000542 92 chlorophyll synthase
+CyCOG_60000543 92 uracil phosphoribosyltransferase
+CyCOG_60000544 92 16S rRNA processing protein RimM
+CyCOG_60000545 92 SSU ribosomal protein S3P
+CyCOG_60000546 92 tRNA-U16,U17-dihydrouridine synthase
+CyCOG_60000547 92 cobalt-precorrin-5B (C1)-methyltransferase
+CyCOG_60000555 92 O-sialoglycoprotein endopeptidase
+CyCOG_60000560 92 hypothetical protein
+CyCOG_60000562 92 trk system potassium uptake protein TrkA
+CyCOG_60000563 92 L-glutamine synthetase
+CyCOG_60000564 92 NAD+ kinase
+CyCOG_60000566 92 transcriptional repressor NrdR
+CyCOG_60000568 92 glycine cleavage system H protein
+CyCOG_60000569 92 5'-nucleotidase /3'-nucleotidase /exopolyphosphatase
+CyCOG_60000570 92 5-amino-6-(5-phosphoribosylamino)uracil reductase
+CyCOG_60000572 92 biotin synthase
+CyCOG_60000573 92 6-phosphogluconate dehydrogenase (decarboxylating)
+CyCOG_60000578 92 ATP-binding cassette, subfamily B
+CyCOG_60000583 92 LSU ribosomal protein L23P
+CyCOG_60000584 92 aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase subunit C
+CyCOG_60000585 92 LSU ribosomal protein L16P
+CyCOG_60000589 92 7-cyano-7-deazaguanine reductase
+CyCOG_60000591 92 ribosome-binding factor A
+CyCOG_60000592 92 cysteine desulfurase / selenocysteine lyase
+CyCOG_60000595 92 transaldolase
+CyCOG_60000599 92 6-pyruvoyltetrahydropterin/6-carboxytetrahydropterin synthase
+CyCOG_60000602 92 spermidine synthase
+CyCOG_60000604 92 GTP-binding protein
+CyCOG_60000611 92 hypothetical protein
+CyCOG_60000612 92 Pentapeptide repeat-containing protein
+CyCOG_60000613 92 septum site-determining protein MinC
+CyCOG_60000615 92 DNA-directed RNA polymerase subunit omega
+CyCOG_60000617 92 hypothetical protein
+CyCOG_60000618 92 chorismate lyase
+CyCOG_60000620 92 shikimate kinase
+CyCOG_60000621 92 Hemolysin, contains CBS domains
+CyCOG_60000623 92 adenosylcobinamide-phosphate synthase
+CyCOG_60000624 92 ATP synthase F0 subcomplex A subunit
+CyCOG_60000628 92 photosystem II oxygen-evolving enhancer protein 2
+CyCOG_60000635 92 LSU ribosomal protein L20P
+CyCOG_60000636 92 sulfur carrier protein
+CyCOG_60000637 92 tRNA(adenine34) deaminase
+CyCOG_60000639 92 LSU ribosomal protein L4P
+CyCOG_60000641 92 cytochrome c-type biogenesis protein CcsB
+CyCOG_60000642 92 peptide deformylase
+CyCOG_60000648 92 Undecaprenyl pyrophosphate synthetase
+CyCOG_60000650 92 photosystem I subunit 3
+CyCOG_60000653 92 ornithine carbamoyltransferase
+CyCOG_60000654 92 arogenate dehydrogenase (NADP)
+CyCOG_60000659 92 circadian clock protein KaiC
+CyCOG_60000661 92 glucokinase
+CyCOG_60000669 92 DNA replication and repair protein RecR
+CyCOG_60000670 92 hypothetical protein
+CyCOG_60000671 92 thymidylate kinase
+CyCOG_60000673 92 protein of unknown function (DUF4346)
+CyCOG_60000674 92 ribosome recycling factor
+CyCOG_60000675 92 guanylate kinase
+CyCOG_60000679 92 1-deoxy-D-xylulose 5-phosphate reductoisomerase
+CyCOG_60000680 92 uridylate kinase
+CyCOG_60000682 92 peptide/nickel transport system substrate-binding protein
+CyCOG_60000686 92 hypothetical protein
+CyCOG_60000687 92 UDP-3-O-[3-hydroxymyristoyl] N-acetylglucosamine deacetylase
+CyCOG_60000688 92 photosystem II Psb27 protein
+CyCOG_60000689 92 SOS-response transcriptional repressor, LexA
+CyCOG_60000693 92 pimeloyl-[acyl-carrier protein] methyl ester esterase
+CyCOG_60000694 92 energy-coupling factor transport system ATP-binding protein
+CyCOG_60000699 92 3-isopropylmalate dehydrogenase
+CyCOG_60000701 92 tRNA (5-methylaminomethyl-2-thiouridylate)-methyltransferase
+CyCOG_60000705 92 sulfite reductase (ferredoxin)
+CyCOG_60000712 92 tRNA threonylcarbamoyl adenosine modification protein YeaZ
+CyCOG_60000718 92 hypothetical protein
+CyCOG_60000719 92 DNA replication and repair protein RecN
+CyCOG_60000724 92 LSU ribosomal protein L3P
+CyCOG_60000725 92 all-trans-nonaprenyl-diphosphate synthase
+CyCOG_60000731 92 probable phosphoglycerate mutase
+CyCOG_60000734 92 geranylgeranyl reductase
+CyCOG_60000738 92 SSU ribosomal protein S14P
+CyCOG_60000739 92 NAD(P) transhydrogenase subunit alpha
+CyCOG_60000741 92 UDP-N-acetylmuramoylalanine--D-glutamate ligase
+CyCOG_60000744 92 diaminopimelate decarboxylase
+CyCOG_60000749 92 Predicted unusual protein kinase regulating ubiquinone biosynthesis, AarF/ABC1/UbiB family
+CyCOG_60000750 92 6,7-dimethyl-8-ribityllumazine synthase
+CyCOG_60000754 92 hypothetical protein
+CyCOG_60000756 92 acyl-[acyl-carrier-protein]--UDP-N-acetylglucosamine O-acyltransferase
+CyCOG_60000759 92 lipid-A-disaccharide synthase
+CyCOG_60000764 92 glucose-1-phosphate adenylyltransferase
+CyCOG_60000770 92 bacterial nucleoid protein Hbs
+CyCOG_60000772 92 Fe-S cluster biogenesis protein NfuA, 4Fe-4S-binding domain
+CyCOG_60000773 92 hypothetical protein
+CyCOG_60000776 92 SSU ribosomal protein S4P
+CyCOG_60000778 92 hypothetical protein
+CyCOG_60000779 92 Alpha/beta hydrolase of unknown function (DUF1400)
+CyCOG_60000780 92 YUP8H12.25 {{Arabidopsis thaliana}}-type protein. Metallo peptidase. MEROPS family M50B
+CyCOG_60000783 92 cell division protein FtsW
+CyCOG_60000785 92 XTP/dITP diphosphohydrolase
+CyCOG_60000788 92 preprotein translocase subunit SecE
+CyCOG_60000789 92 3-dehydroquinate dehydratase
+CyCOG_60000790 92 hypothetical protein
+CyCOG_60000792 92 Iron-binding apoprotein IscA
+CyCOG_60000794 92 SSU ribosomal protein S20P
+CyCOG_60000796 92 seryl-tRNA synthetase
+CyCOG_60000800 92 TIGR00159 family protein
+CyCOG_60000803 92 SprT-like family protein
+CyCOG_60000805 92 ferredoxin--NADP+ reductase
+CyCOG_60000806 92 methenyltetrahydrofolate cyclohydrolase /5,10-methylenetetrahydrofolate dehydrogenase (NADP+)
+CyCOG_60000812 92 hypothetical protein
+CyCOG_60000816 92 translation initiation factor 1 (eIF-1/SUI1)
+CyCOG_60000817 92 dihydroneopterin aldolase
+CyCOG_60000825 92 phosphoribosylamine--glycine ligase
+CyCOG_60000826 92 D-alanine--D-alanine ligase
+CyCOG_60000836 92 D-fructose 1,6-bisphosphatase /sedoheptulose 1,7-bisphosphatase
+CyCOG_60000837 92 1,4-Dihydroxy-2-naphthoyl-CoA synthase
+CyCOG_60000842 92 precorrin-2/cobalt-factor-2 C20-methyltransferase
+CyCOG_60000847 92 LSU ribosomal protein L29P
+CyCOG_60000848 92 nicotinate-nucleotide adenylyltransferase
+CyCOG_60000852 92 IMP dehydrogenase
+CyCOG_60000857 92 Phage integrase family protein
+CyCOG_60000860 92 hypothetical protein
+CyCOG_60000867 92 farnesyl-diphosphate synthase
+CyCOG_60000869 92 tRNA 2-selenouridine synthase
+CyCOG_60000875 92 prolycopene isomerase
+CyCOG_60000877 92 transcription-repair coupling factor (superfamily II helicase)
+CyCOG_60000880 92 Histidine kinase-like ATPase domain-containing protein
+CyCOG_60000883 92 3-hydroxyacyl-[acyl-carrier-protein] dehydratase
+CyCOG_60000884 92 hypothetical protein
+CyCOG_60000890 92 hypothetical protein
+CyCOG_60000891 92 glutamyl-tRNA reductase
+CyCOG_60000892 92 DNA primase
+CyCOG_60000895 92 hypothetical protein
+CyCOG_60000896 92 Protein of unknown function (DUF3007)
+CyCOG_60000898 92 protein translocase subunit secF
+CyCOG_60000904 92 Protein of unknown function (DUF3134)
+CyCOG_60000912 92 formate-dependent phosphoribosylglycinamide formyltransferase
+CyCOG_60000914 92 putative ABC transport system permease protein
+CyCOG_60000915 92 protein of unknown function (DUF1825)
+CyCOG_60000919 92 4-alpha-glucanotransferase
+CyCOG_60000923 92 molecular chaperone HtpG
+CyCOG_60000925 92 hypothetical protein
+CyCOG_60000926 92 hypothetical protein
+CyCOG_60000932 92 PH domain-containing protein
+CyCOG_60000933 92 quinolinate synthetase
+CyCOG_60000938 92 Protein of unknown function (DUF3727)
+CyCOG_60000940 92 Holliday junction endonuclease RuvC
+CyCOG_60000945 92 hypothetical protein
+CyCOG_60000951 92 pyruvate kinase
+CyCOG_60000957 92 Pentapeptide repeat-containing protein
+CyCOG_60000958 92 Protein of unknown function (DUF3593)
+CyCOG_60000961 92 Protein of unknown function (DUF1350)
+CyCOG_60000962 92 glycyl-tRNA synthetase alpha chain
+CyCOG_60000973 92 LSU ribosomal protein L28P
+CyCOG_60000980 92 putative membrane protein
+CyCOG_60000981 92 16S rRNA (guanine(966)-N(2))-methyltransferase RsmD
+CyCOG_60000983 92 2-phosphosulfolactate phosphatase
+CyCOG_60000984 92 protoporphyrin IX magnesium-chelatase
+CyCOG_60000985 92 PmbA protein
+CyCOG_60000989 92 Glutaredoxin-like domain (DUF836)
+CyCOG_60000990 92 LSU ribosomal protein L27P
+CyCOG_60000991 92 hypothetical protein
+CyCOG_60000992 92 Protein of unknown function (DUF2499)
+CyCOG_60000995 92 ribosome-associated protein
+CyCOG_60000997 92 D-Ala-D-Ala carboxypeptidase. Metallo peptidase. MEROPS family M15B
+CyCOG_60000998 92 Pentapeptide repeat-containing protein
+CyCOG_60001002 92 5-(carboxyamino)imidazole ribonucleotide synthase
+CyCOG_60001005 92 3,4-dihydroxy-2-butanone 4-phosphate synthase /GTP cyclohydrolase II
+CyCOG_60001010 92 glutathione peroxidase
+CyCOG_60001014 92 NAD(P)H-quinone oxidoreductase subunit N
+CyCOG_60001015 92 two component transcriptional regulator, winged helix family
+CyCOG_60001016 92 LSU ribosomal protein L21P
+CyCOG_60001018 92 Protein of unknown function (DUF3318)
+CyCOG_60001020 92 [LSU ribosomal protein L11P]-lysine N-methyltransferase
+CyCOG_60001022 92 3-dehydroquinate synthase
+CyCOG_60001029 92 hypothetical protein
+CyCOG_60001030 92 energy-coupling factor transport system ATP-binding protein
+CyCOG_60001033 92 RNAse Z
+CyCOG_60001047 92 translation elongation factor Ts (EF-Ts)
+CyCOG_60001048 92 tRNA pseudouridine synthase B
+CyCOG_60001050 92 L-threonine ammonia-lyase
+CyCOG_60001055 92 Protein of unknown function (DUF3531)
+CyCOG_60001058 92 SSU ribosomal protein S2P
+CyCOG_60001059 92 putative ABC transport system permease protein
+CyCOG_60001063 92 Protein of unknown function (DUF2470)
+CyCOG_60001067 92 circadian clock protein KaiB
+CyCOG_60001072 92 Protein of unknown function (DUF760)
+CyCOG_60001077 92 uroporphyrinogen decarboxylase
+CyCOG_60001079 92 monothiol glutaredoxin
+CyCOG_60001082 92 Nitrogen fixation protein of unknown function
+CyCOG_60001083 92 photosystem II S4 domain protein
+CyCOG_60001093 92 tRNA/rRNA methyltransferase
+CyCOG_60001099 92 NAD(P)H-binding
+CyCOG_60001105 92 phosphonate transport system permease protein
+CyCOG_60001107 92 YggT family protein
+CyCOG_60001108 92 transcriptional regulator, BolA protein family
+CyCOG_60001117 92 biotin transport system substrate-specific component
+CyCOG_60001119 92 pyridoxine 5'-phosphate synthase
+CyCOG_60001128 92 Methyltransferase domain-containing protein
+CyCOG_60001130 92 Nucleoside-diphosphate-sugar epimerase
+CyCOG_60001131 92 4-diphosphocytidyl-2-C-methyl-D-erythritol kinase
+CyCOG_60001135 92 lipopolysaccharide export system permease protein
+CyCOG_60001137 92 Protein of unknown function (DUF3110)
+CyCOG_60001138 92 peptidyl-prolyl cis-trans isomerase B (cyclophilin B)
+CyCOG_60001139 92 hypothetical protein
+CyCOG_60001141 92 phosphonate transport system substrate-binding protein
+CyCOG_60001144 92 hypothetical protein
+CyCOG_60001145 92 NTP pyrophosphatase, house-cleaning of non-canonical NTPs
+CyCOG_60001147 92 DNA polymerase
+CyCOG_60001148 92 protein of unknown function (DUF1824)
+CyCOG_60001154 92 Protein of unknown function (DUF3148)
+CyCOG_60001155 92 SOS response UmuD protein. Serine peptidase. MEROPS family S24
+CyCOG_60001163 92 import apparatus Tic20-like
+CyCOG_60001167 92 dimethyladenosine transferase
+CyCOG_60001170 92 carbamoyl-phosphate synthase small subunit
+CyCOG_60001171 92 myo-inositol-1(or 4)-monophosphatase
+CyCOG_60001177 92 Nucleoside-diphosphate-sugar epimerase
+CyCOG_60001178 92 anthranilate phosphoribosyltransferase
+CyCOG_60001184 92 methionyl-tRNA synthetase
+CyCOG_60001187 92 leucyl-tRNA synthetase
+CyCOG_60001197 92 tRNA (cytidine/uridine-2'-O-)-methyltransferase
+CyCOG_60001210 92 23S rRNA (guanosine2251-2'-O)-methyltransferase
+CyCOG_60001224 92 signal peptidase II Aspartic peptidase. MEROPS family A08
+CyCOG_60001237 92 acyl-CoA thioester hydrolase
+CyCOG_60001241 92 SSU ribosomal protein S18P
+CyCOG_60001245 92 ribonuclease-3 family protein
+CyCOG_60001256 92 Protein of unknown function (DUF3288)
+CyCOG_60001264 92 peroxiredoxin (alkyl hydroperoxide reductase subunit C)
+CyCOG_60001271 92 Protein of function (DUF2518)
