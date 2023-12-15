@@ -8,7 +8,7 @@
 #SBATCH -p sched_mit_chisholm
 #SBATCH --mem=250000
 #SBATCH --chdir=/pool001/jmullet/gorgcycogamz20230927/scripts
-#SBATCH --array=2-2%1
+#SBATCH --array=500-500%1
 
 ##### Load Input Files #####
 WORKDIR=$1
@@ -50,5 +50,3 @@ conda deactivate
 date
 wait
 echo "Step 1.2 Done"
-touch ${WORKDIR}/02_completion_flag.txt
-rm ${WORKDIR}/01_completion_flag.txt
