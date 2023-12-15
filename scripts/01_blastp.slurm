@@ -50,4 +50,3 @@ conda deactivate
 date
 wait
 echo "Step 1 Done"
-touch ${WORKDIR}/01_completion_flag.txt
