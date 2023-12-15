@@ -7,28 +7,31 @@
 #SBATCH -t 1-00:00:00
 #SBATCH -p sched_mit_chisholm
 #SBATCH --mem=250000
-#SBATCH --chdir=/nfs/chisholmlab001/jmullet/projects/23_gorg/scripts
+#SBATCH --chdir=/pool001/jmullet/gorgcycogamz20230927/scripts
 
 ##### Load Input Files #####
 WORKDIR=/pool001/jmullet/gorgcycogamz20230927
-INPUT_FASTA=/pool001/jmullet/gorgcycogamz20230927/phylogeny/syn_subset_tree.fas
-PHYLIPCONVERT=/pool001/jmullet/gorgcycogamz20230927/scripts/fasta_to_phyliprelaxed.py
+INPUT_FASTA=/pool001/jmullet/gorgcycogamz20230927/phylogeny/total_updated_genomes.faa
+filename=$(basename "$INPUT_FASTA")
+variable="${filename%.*}"
+fasta_input="${variable%.*}"
 
 ##### Script Preparation #####
 hostname
 date
-mkdir ${WORKDIR}/phylogeny/
+#mkdir ${WORKDIR}/phylogeny/
 cd ${WORKDIR}/phylogeny/
 
 ##### Convert Fasta to Phylip File #####
-cat ${INPUT_FASTA} | sed 's/?/-/g' > ${INPUT_FASTA}.faa
+eval "$(conda shell.bash hook)"
 conda activate biopython_project
-python3 ${PHYLIPCONVERT} \
-    ${WORKDIR}/phylogeny/${INPUT_FASTA}.faa \
-    ${WORKDIR}/phylogeny/${INPUT_FASTA}.phy
 
 ##### Create Phylogeny with FastTree #####
-FastTreeMP -n 100 -boot 100 -lg -out fasttree_${INPUT_FASTA}.nwk ${INPUT_FASTA}.phy
+FastTreeMP \
+    -lg \
+    -boot 100 \
+    -out fasttree_${fasta_input}.nwk \
+    ${fasta_input}.faa
 
 ##### Cleanup and Waiting steps #####
 conda deactivate
