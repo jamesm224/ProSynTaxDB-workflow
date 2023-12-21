@@ -3,7 +3,7 @@
 Hey Future Researchers who use this! Here are the code repository for the updated GORG database (or pro/syn annotation database)!
 
 TEMPORARY FIGURE
-![updated_genomes (1)](https://github.com/jamesm224/gorg_db_update/assets/86495895/b85dd4d0-554c-46cb-9131-7ec7db7022bb)
+![updated_genomes (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/181bba39-b338-4553-97c3-8a7f553ec7fa)
 
 # Where are the files?
 1. pro_syn_classification - scripts for classification of pro/syn
