@@ -47,7 +47,7 @@ Annotate sequences with GORG-AMZ database and normalize data
    ```
 
 # Required Arguments:
-The input reads works on paired end reads with a pattern like this '/path/to/input_data/*_{1,2}.fastq' or single end reads that looks like this '/path/to/input_data/*.fastq'
+The input reads works on paired end reads with a pattern like this ```/path/to/input_data/*_{1,2}.fastq``` or single end reads that looks like this ```/path/to/input_data/*.fastq```
 ```
 --input_reads: the path to input sequences
 --nodes: path containing nodes file
