@@ -26,7 +26,7 @@ Dependencies (These were the versions we used, but other verisions may work):
 
        mamba install -c bioconda diamond=2.1.8 seqtk=1.4 pandas=2.0.3 kaiju=1.9.2
 
-2. Install [nextflow](https://www.nextflow.io/docs/latest/install.html)
+2. Install [nextflow](https://www.nextflow.io/docs/latest/install.html):
    
         curl -s https://get.nextflow.io | bash
 
@@ -34,18 +34,13 @@ Dependencies (These were the versions we used, but other verisions may work):
 
        git clone https://github.com/jamesm224/gorg_db_update/
 
+4. Annotate sequences with GORG-AMZ database and normalize data
 
-
-6. Prepare scripts for running (ensure this file is executable):
-
-       chmod +x /database/run_kaiju.sh
-       (insert appropriate input files for running Kaiju output)
-
-7. Run the script against your dataset!
-
-        sbatch main_run.sh
-   
-            OR
-   
-        ./main_run.sh
+   nextflow run updated_run.nf \
+    --input_reads '/path/to/input_data/*_{1,2}_sequence.fastq' \
+    --nodes /path/to/final_ncbi_pro_nodes.dmp \
+    --names /path/to/final_ncbi_pro_names.dmp \
+    --fmi /path/to/final_MARMICRODB2_virus.fmi \
+    --outputdir /path/to/output_directory \
+    --dmnd /path/to/CyCOG6.dmnd
 
