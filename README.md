@@ -48,12 +48,12 @@ Annotate sequences with GORG-AMZ database and normalize data
 
 # Required Arguments:
 ```
-        --input_reads: the path to input sequences
-        --nodes: path containing nodes file
-        --names: path containing names file
-        --fmi: path containg fmi file
-        --outputdir: path to output directory
-        --dmnd path to CyCOG6 Diamond directory
+--input_reads: the path to input sequences
+--nodes: path containing nodes file
+--names: path containing names file
+--fmi: path containg fmi file
+--outputdir: path to output directory
+--dmnd path to CyCOG6 Diamond directory
 ```
      
 
