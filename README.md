@@ -9,7 +9,7 @@ Hey Future Researchers who use this! Here are the code repository for the GORG-A
 1. pro_syn_classification - scripts for classification of pro/syn
 2. Database - scripts and files for running the database
 
-# How to Install the Pipeline
+# How to Install the Pipeline:
 
 Dependencies (These were the versions we used, but other verisions may work):
 
@@ -34,7 +34,8 @@ Dependencies (These were the versions we used, but other verisions may work):
 
        git clone https://github.com/jamesm224/gorg_db_update/
 
-4. Annotate sequences with GORG-AMZ database and normalize data
+# Usage:
+Annotate sequences with GORG-AMZ database and normalize data
    ```
    nextflow run updated_run.nf \
            --input_reads '/path/to/input_data/*_{1,2}_sequence.fastq' \
@@ -44,4 +45,15 @@ Dependencies (These were the versions we used, but other verisions may work):
            --outputdir /path/to/output_directory \
            --dmnd /path/to/CyCOG6.dmnd
    ```
+
+# Required Arguments:
+```
+        --input_reads: the path to input sequences
+        --nodes: path containing nodes file
+        --names: path containing names file
+        --fmi: path containg fmi file
+        --outputdir: path to output directory
+        --dmnd path to CyCOG6 Diamond directory
+```
+     
 
