@@ -35,12 +35,13 @@ Dependencies (These were the versions we used, but other verisions may work):
        git clone https://github.com/jamesm224/gorg_db_update/
 
 4. Annotate sequences with GORG-AMZ database and normalize data
-
+   ```
    nextflow run updated_run.nf \
-    --input_reads '/path/to/input_data/*_{1,2}_sequence.fastq' \
-    --nodes /path/to/final_ncbi_pro_nodes.dmp \
-    --names /path/to/final_ncbi_pro_names.dmp \
-    --fmi /path/to/final_MARMICRODB2_virus.fmi \
-    --outputdir /path/to/output_directory \
-    --dmnd /path/to/CyCOG6.dmnd
+           --input_reads '/path/to/input_data/*_{1,2}_sequence.fastq' \
+           --nodes /path/to/final_ncbi_pro_nodes.dmp \
+           --names /path/to/final_ncbi_pro_names.dmp \
+           --fmi /path/to/final_MARMICRODB2_virus.fmi \
+           --outputdir /path/to/output_directory \
+           --dmnd /path/to/CyCOG6.dmnd
+   ```
 
