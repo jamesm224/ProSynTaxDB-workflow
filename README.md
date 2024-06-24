@@ -11,7 +11,7 @@ Hey Future Researchers who use this! Here are the code repository for the GORG-A
 
 # How to Install the Pipeline:
 
-Dependencies (These were the versions we used, but other verisions may work):
+Dependencies (These were the versions we used, but other versions may work):
 
         1. pandas v2.0.3
         2. seqtk v1.4
