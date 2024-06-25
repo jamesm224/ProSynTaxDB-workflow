@@ -5,10 +5,6 @@ Hey Future Researchers who use this! Here are the code repository for the GORG-A
 # Phylogenetic Tree of All Pro and Syn used in Creating this Database
 ![updated_genomes (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/181bba39-b338-4553-97c3-8a7f553ec7fa)
 
-# Where are the files?
-1. pro_syn_classification - scripts for classification of pro/syn
-2. Database - scripts and files for running the database
-
 # How to Install the Pipeline:
 
 Dependencies (These were the versions we used, but other versions may work):
@@ -26,7 +22,7 @@ Dependencies (These were the versions we used, but other versions may work):
 
        mamba install -c bioconda diamond=2.1.8 seqtk=1.4 pandas=2.0.3 kaiju=1.9.2
 
-2. Install [nextflow](https://www.nextflow.io/docs/latest/install.html):
+2. Install [nextflow](https://www.nextflow.io/docs/latest/install.html): If you have issues installing this, make sure your computer has the correct java version installed
    
         curl -s https://get.nextflow.io | bash
 
