@@ -7,50 +7,20 @@ Hey Future Researchers who use this! Here are the code repository for the GORG-A
 
 # How to Install the Pipeline:
 
-Dependencies (These were the versions we used, but other versions may work):
-
-        1. pandas v2.0.3
-        2. seqtk v1.4
-        3. diamond v2.1.8
-        4. kaiju v1.9.2
-
 1. Install Conda/Mamba Environment:
 
-       mamba create -n gorg_amz_database
+       mamba create -c bioconda -c conda-forge -n snakemake snakemake
    
-       mamba activate gorg_amz_database
+       mamba activate snakemake
 
-       mamba install -c bioconda diamond=2.1.8 seqtk=1.4 pandas=2.0.3 kaiju=1.9.2
-
-2. Install [nextflow](https://www.nextflow.io/docs/latest/install.html): If you have issues installing this, make sure your computer has the correct java version installed
-   
-        curl -s https://get.nextflow.io | bash
-
-3. Clone repository: (still in progress):
+2. Clone repository: (still in progress):
 
        git clone https://github.com/jamesm224/gorg_db_update/
 
 # Usage:
-Annotate sequences with GORG-AMZ database and normalize data
-   ```
-   nextflow run updated_run.nf \
-           --input_reads '/path/to/input_data/*_{1,2}_sequence.fastq' \
-           --nodes /path/to/final_ncbi_pro_nodes.dmp \
-           --names /path/to/final_ncbi_pro_names.dmp \
-           --fmi /path/to/final_MARMICRODB2_virus.fmi \
-           --outputdir /path/to/output_directory \
-           --dmnd /path/to/CyCOG6.dmnd
-   ```
+Annotate sequences with GORG-AMZ database and normalize data. Configure the config files located in the ```config/``` and the ```input/``` directories. Additionally, create a samples.tsv file. An example is located in the ```input/``` directory.
 
 # Required Arguments:
-The input reads works on paired end reads with a pattern like this ```/path/to/input_data/*_{1,2}.fastq``` or single end reads that looks like this ```/path/to/input_data/*.fastq```
-```
---input_reads: the path to input sequences
---nodes: path containing nodes file
---names: path containing names file
---fmi: path containg fmi file
---outputdir: path to output directory
---dmnd: path to CyCOG6 Diamond directory
-```
+
      
 
