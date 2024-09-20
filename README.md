@@ -19,12 +19,16 @@ Hey Future Researchers who use this! Here are the code repository for the GORG-A
 
 # Usage:
 
-       1. Annotate sequences with GORG-AMZ database and normalize data. Configure the config files located in the ```config/``` and the ```input/``` directories. Additionally, create a samples.tsv file. An example is located in the ```input/``` directory.
+1. Annotate sequences with GORG-AMZ database and normalize data. Configure the config files located in the ```config/``` and the ```input/``` directories. Additionally, create a samples.tsv file. An example is located in the ```input/``` directory.
 
-       2. Run Snakemake Script
-       ```sbatch run_classify_smk.sbatch```
+2. Run Snakemake Script
+   ```sbatch run_classify_smk.sbatch```
 
 # Interpreting Output Files:
+
+Files Located in ```results/``` directory
+
+1. 
 
      
 
