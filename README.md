@@ -18,9 +18,13 @@ Hey Future Researchers who use this! Here are the code repository for the GORG-A
        git clone https://github.com/jamesm224/gorg_db_update/
 
 # Usage:
-Annotate sequences with GORG-AMZ database and normalize data. Configure the config files located in the ```config/``` and the ```input/``` directories. Additionally, create a samples.tsv file. An example is located in the ```input/``` directory.
 
-# Required Arguments:
+       1. Annotate sequences with GORG-AMZ database and normalize data. Configure the config files located in the ```config/``` and the ```input/``` directories. Additionally, create a samples.tsv file. An example is located in the ```input/``` directory.
+
+       2. Run Snakemake Script
+       ```sbatch run_classify_smk.sbatch```
+
+# Interpreting Output Files:
 
      
 
