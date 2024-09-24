@@ -31,7 +31,8 @@ Made by James Mullet and Nhi Vo!
 
 Files Located in ```results/``` directory
 
-1. 
+1. summary_read_count.tsv - contains the overall read counts for Prochlorococcus, Synechococcus, and Unclassified reads detected by the classifier
+2. 
 
      
 
