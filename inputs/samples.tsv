@@ -1,0 +1,2 @@
+exp_name	sample	treatment	replicate	forward read	reverse read
+test1	test1	Control	1	/orcd/data/chisholm/001/bioinfo/projects/24_updated_GORG_AMZ_classifier/testing_data/240311Chi_D24-148068_1_sequence.fastq	/orcd/data/chisholm/001/bioinfo/projects/24_updated_GORG_AMZ_classifier/testing_data/240311Chi_D24-148068_2_sequence.fastq
