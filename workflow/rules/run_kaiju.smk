@@ -1,3 +1,4 @@
+
 rule kaiju_run:
     input:
         r1 = scratch_dict["trimmed_reads"] / "{sample}_1_trimmed.fastq.gz",
@@ -74,8 +75,3 @@ rule kaiju_summary_taxa:
     shell:
         "kaiju2table -t {input.nodes} -n {input.names} -r genus "
         "{input.kaiju} -o {output} "
-
-rule classification_summary:
-    input:
-        kaiju_summary = scratch_dict["classified_kaiju_read_output"] / "{sample}_kaiju_summary.tsv", 
-    output: 
