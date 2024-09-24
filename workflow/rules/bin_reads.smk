@@ -22,6 +22,9 @@ rule extract_binned_reads:
     For each binned clade: 
         - Obtain read name using bin_headers output 
         - Extract those reads from trimmed .fastq file
+
+    Note: commented out reverse read extraction: diamond blast does not take paired
+    end reads, only 1 sequence. 
     """
     input: 
         r1 = scratch_dict["trimmed_reads"] / "{sample}_1_trimmed.fastq.gz",
