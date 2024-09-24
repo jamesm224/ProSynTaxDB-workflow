@@ -1,0 +1,62 @@
+from pathlib import Path
+import shutil
+import pandas as pd
+import argparse
+import glob
+
+### Load samples.tsv file and obtain list of samples ###
+SAMPLE_TABLE = pd.read_csv(config["input"]["sample table"], index_col="sample", sep="\t")
+SAMPLE_TABLE.index = SAMPLE_TABLE.index.map(str)  # convert index (samples) to string 
+SAMPLES = SAMPLE_TABLE.index.tolist()  # obtain list of samples 
+
+##### Define output files and/or directories #####
+scratch_dir = Path(config["scratch directory"])
+results_dir = Path(config["results directory"])
+
+scratch_dict = {
+    # read trimming 
+    "trimmed_reads": scratch_dir / "trimmed_reads",
+
+    # kaiju classification 
+    "classified_kaiju_read_output": scratch_dir / "classified_kaiju_read_output",
+
+    # binning of classified reads 
+    "read_binning": {
+        # dir of sample directories containing files of header names for each clade
+        "binned_headers": scratch_dir / "read_binning" / "binned_headers", 
+        # dir of sample directories containing files of extracted reads for each clade
+        "binned_reads": scratch_dir / "read_binning" /"binned_reads",
+    }, 
+
+    # diamond blast binned reads 
+    "diamond_blast": scratch_dir / "diamond_blast",
+
+    # read count normalization
+    "count_normalization": {
+        # dir of sample directories containing normalized count files for each clade
+        "normalized_counts": scratch_dir / "count_normalization" / "normalized_counts",
+        # directory to store aggreated normalized counts (1 file per sample)
+        "aggregated_normalized": scratch_dir / "count_normalization" / "aggregated_normalized",
+    }, 
+}
+
+results_dict = {
+    # read count and percentages of specified genus in config
+    "summary_read_count": results_dir / "summary_read_count.tsv", 
+    # normalized counts (genome equivalents) of Pro and Syn clades 
+    "final_normalized_count": results_dir / "normalized_counts.tsv", 
+}
+
+##### Define the file files to generate #####
+rule all:
+    input:
+        results_dict['final_normalized_count'],  
+        results_dict['summary_read_count'], 
+
+##### Define the Rules that are used in this pipeline #####
+include: "rules/trim_reads.smk"
+include: "rules/run_kaiju.smk"
+include: "rules/bin_reads.smk"
+include: "rules/blast_reads.smk"
+include: "rules/normalize_reads.smk"
+include: "rules/aggregate_results.smk"
