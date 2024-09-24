@@ -1,0 +1,50 @@
+snakefile: workflow/Snakefile
+use-conda: True
+conda-frontend: mamba
+rerun-incomplete: True
+jobs: 25
+latency-wait: 120
+keep-going: True
+configfile: inputs/config.yaml
+keep-incomplete: False
+# unlock: True
+
+cluster: 
+  mkdir -p logs/{rule} &&
+  sbatch
+    --partition={resources.partition}
+    --ntasks={resources.tasks}
+    --cpus-per-task={resources.cpus_per_task}
+    --mem={resources.mem}
+    --time={resources.time}
+    --job-name={rule}-%j
+    --output="logs/{rule}/{wildcards}.out"
+    --error="logs/{rule}/{wildcards}.err"
+
+# adjust as needed 
+default-resources: 
+  - time="10:00:00"
+  - partition="sched_mit_chisholm"
+  - mem=24000  # 24G
+  - cpus_per_task=2  # default threads/CPU/cores
+  - tasks=1
+
+set-resources:
+  # extract binned reads: import kaiju names - no parallelization 
+  - extract_binned_reads:cpus_per_task=1
+
+  # read normalization: import blast results - might require more mem; no parallelization 
+  - normalize_reads:cpus_per_task=1
+  - normalize_reads:mem=10000  # 10G
+
+  # aggregate normalized clade files: less mem; no parallelization 
+  - aggregate_normalized_clades:cpus_per_task=1
+  - aggregate_normalized_clades:mem=1000  # 1G
+
+  # aggregate normalized file for all samples: less mem; no parallelization 
+  - aggregate_normalized_samples:cpus_per_task=1
+  - aggregate_normalized_samples:mem=1000 # 1G
+
+  # aggregate kaiju summary: less mem; no parallelization 
+  - aggregate_summary:cpus_per_task=1
+  - aggregate_summary:mem=1000 # 1G
