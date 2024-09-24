@@ -18,7 +18,9 @@ def aggregate_normalized_clade(wildcards):
 
 rule aggregate_normalized_clades:
     """
-    Combine normalized outputs for all clades in a sample. 
+    Combines normalized outputs for all clades in a sample.
+        - Each classified clade within a sample outputs a normalized file, 
+        this step combines all of those files for a sample. 
     """
     input:
         # obtain list of normalized clade output 
@@ -30,7 +32,7 @@ rule aggregate_normalized_clades:
 
 rule aggregate_normalized_samples:
     """
-    Combine normalized output for all samples. 
+    Combines normalized output for all samples. 
     """
     input:
         expand(scratch_dict['count_normalization']['aggregated_normalized'] / "{sample}.tsv", sample=SAMPLES), 
@@ -50,4 +52,16 @@ rule aggregate_normalized_samples:
 
 rule aggregate_summary:
     """
+    Parses all _kaiju_summary files and obtain counts and percentage of taxons in genus_list. 
+    Sum counts of remaining rows into "other_genus". 
     """
+    input:
+        kaiju_summary = expand(scratch_dict["classified_kaiju_read_output"] / "{sample}_kaiju_summary.tsv", sample=SAMPLES),  
+    params:
+        genus_list = config["classification_summary"]["genus_list"], 
+    output:
+        summary_oufpath = results_dict['summary_read_count'], 
+    conda:
+        "../envs/python.yaml"
+    script:
+        "../scripts/classification_summary.py"
