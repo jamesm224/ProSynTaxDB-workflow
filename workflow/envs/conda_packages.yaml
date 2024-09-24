@@ -1,0 +1,14 @@
+channels:
+- conda-forge
+- bioconda
+- defaults
+dependencies:
+- seqtk
+- kaiju
+- python
+- pandas
+- argparse
+- pathlib
+- blast
+- diamond
+- numpy
