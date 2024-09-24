@@ -15,7 +15,7 @@ Hey Future Researchers who use this! Here are the code repository for the GORG-A
 
 2. Clone repository: (still in progress):
 
-       git clone https://github.com/jamesm224/gorg_db_update/
+       git clone https://github.com/jamesm224/gorg_amz_classifier/
 
 # Usage:
 
