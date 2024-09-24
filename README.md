@@ -23,7 +23,8 @@ Made by James Mullet and Nhi Vo!
 
 1. Annotate sequences with GORG-AMZ database and normalize data. Configure the config files located in the ```config/``` and the ```input/``` directories. Additionally, create a samples.tsv file. An example is located in the ```input/``` directory.
 
-2. Run Snakemake Script
+2. Run Snakemake Script - we have included a test example, which should run once the config and input directories are properly set up. Please try running the following command on the test data to ensure the pipeline was installed correctly.
+   
    ```sbatch run_classify_smk.sbatch```
 
 # Interpreting Output Files:
