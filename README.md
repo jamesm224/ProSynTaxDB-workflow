@@ -1,6 +1,7 @@
 # GORG-AMZ Classifer
 
 Hey Future Researchers who use this! Here are the code repository for the GORG-AMZ Classifier.
+
 Made by James Mullet and Nhi Vo!
 
 # Phylogenetic Tree of All Pro and Syn used in Creating this Database
