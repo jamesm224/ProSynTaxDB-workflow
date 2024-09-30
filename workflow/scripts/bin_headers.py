@@ -16,6 +16,12 @@ def process_genus_df(df, rank, sample_name, output_dir):
         - Save names of reads (fastq sequence headers) of reads with that classification 
         - e.g. save all reads in the current sample classified as "Prochlorococcus subclade HLI" into a file 
     """
+    print(f'df.head() before binning:\n{df.head()}\n')
+    # remove phage & viral rows
+    df = df[~df['genus'].str.contains('phage')]
+    df = df[~df['genus'].str.contains('virus')]
+
+    # filter for cols needed 
     df = df[[rank, 'genus', 'read']]
 
     # fill NAs in cols with "unclassified" 
@@ -28,12 +34,13 @@ def process_genus_df(df, rank, sample_name, output_dir):
     # for each rank_classification (e.g. AMZ-I)
     for index, rdf in rank_groups:
         # genus of classification (Pro or Syn)
-        genus = rdf.iloc[0]['genus']
+        genus = rdf.iloc[0]['genus']        
         
-        # obtain classification:  kaiju classification + string edit
-        classification = index[0].replace(" ", "_").replace("/", "_")  
+        # obtain classification: kaiju classification + string edit
+        rank_value = rdf.iloc[0][rank]  # rank ("subclade" or "subsubclade") of subset-df
+        classification = rank_value.strip().replace(" ", "_").replace("/", "_")  
         
-        # in rows where there are no classification, call them 'unclassified' 
+        # format "unclassified" rows to be the same as classified rows
         if classification == 'unclassified':
             classification = f'{genus}_{rank}_unclassified'  
         
@@ -55,20 +62,25 @@ def process_kaiju_names(fpath, output_dir):
     print(f"Sample path: {fpath}")
     
     # Import and process names.out kaiju file 
-    df = pd.read_table(fpath, header=None, usecols=[1,3], names=['read', 'taxa'])
+    df = pd.read_table(
+        fpath, 
+        names=['status', 'read', 'taxon_id', 'taxa'], 
+        dtype={'read': str, 'taxa': str}, 
+        encoding='utf-8'
+    )[['read', 'taxa']]
+
     df['sample_name'] = sample_name
+    print(f"Imported df:\n{df.head()}")
 
-    # Obtain data for each rank of classification
+    # Obtain data for each rank of classification + remove whitespace 
     df['taxa'] = df['taxa'].str.split(';')  # split column containing full classification 
-    df['genus'] = df['taxa'].str.get(8) 
-    df['clade'] = df['taxa'].str.get(9)
-    df['subclade'] = df['taxa'].str.get(10)
-    df['subsubclade'] = df['taxa'].str.get(11)
-
-    # Remove leading and trailing whitespace 
-    df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+    df['genus'] = df['taxa'].str.get(8).str.strip()
+    df['clade'] = df['taxa'].str.get(9).str.strip()
+    df['subclade'] = df['taxa'].str.get(10).str.strip()
+    df['subsubclade'] = df['taxa'].str.get(11).str.strip()
 
     # Subset to obtain dfs of reads classified as pro and syn
+    df['genus'] = df['genus'].astype(str)  # convert to str type for 2 lines below
     pro_df = df[df['genus'].str.contains('Prochlorococcus', case=False, na=False)].copy()
     syn_df = df[df['genus'].str.contains('Synechococcus', case=False, na=False)].copy()
 
