@@ -2,7 +2,7 @@ snakefile: workflow/Snakefile
 use-conda: True
 conda-frontend: mamba
 rerun-incomplete: True
-jobs: 25
+jobs: 5
 latency-wait: 120
 keep-going: True
 configfile: inputs/config.yaml
@@ -23,28 +23,19 @@ cluster:
 
 # adjust as needed 
 default-resources: 
-  - time="10:00:00"
+  - time="1-0"
   - partition="sched_mit_chisholm"
-  - mem=24000  # 24G
-  - cpus_per_task=2  # default threads/CPU/cores
+  - mem=12500  # 12.5G
+  - cpus_per_task=1  # default threads/CPU/cores
   - tasks=1
 
 set-resources:
-  # extract binned reads: import kaiju names - no parallelization 
-  - extract_binned_reads:cpus_per_task=1
+  # read trimming (bbduk has threads param but does not fully utilize all cores provide)
+  - run_trim_PE:cpus_per_task=4  # 4 cores
+  - run_trim_PE:mem=50000  # 50G
+  - run_trim_PE:time="1-0"  # 1 days 
 
-  # read normalization: import blast results - might require more mem; no parallelization 
-  - normalize_reads:cpus_per_task=1
-  - normalize_reads:mem=10000  # 10G
-
-  # aggregate normalized clade files: less mem; no parallelization 
-  - aggregate_normalized_clades:cpus_per_task=1
-  - aggregate_normalized_clades:mem=1000  # 1G
-
-  # aggregate normalized file for all samples: less mem; no parallelization 
-  - aggregate_normalized_samples:cpus_per_task=1
-  - aggregate_normalized_samples:mem=1000 # 1G
-
-  # aggregate kaiju summary: less mem; no parallelization 
-  - aggregate_summary:cpus_per_task=1
-  - aggregate_summary:mem=1000 # 1G
+  # kaiju (same as read trimming)
+  - kaiju_run:cpus_per_task=20  # 20 cores
+  - kaiju_run:mem=250000  # 250G
+  - kaiju_run:time="4-0"  # 4 days 
