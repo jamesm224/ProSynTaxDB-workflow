@@ -31,7 +31,7 @@ rule extract_binned_reads:
         # r2 = scratch_dict["trimmed_reads"] / "{sample}_2_trimmed.fastq.gz",
         clade_read_headers = scratch_dict["read_binning"]["binned_headers"] / "{sample}" / "{sample_clade}_reads.txt", 
     output:
-        forward_reads = scratch_dict["read_binning"]["binned_reads"] / "{sample}" / "{sample_clade}_fwd.fastq",
+        forward_reads = temp(scratch_dict["read_binning"]["binned_reads"] / "{sample}" / "{sample_clade}_fwd.fastq"),
         # reverse_reads = scratch_dict["read_binning"]["binned_reads"] / "{sample}" / "{sample_clade}_rev.fastq",
     conda:
         "../envs/seqtk.yaml"
