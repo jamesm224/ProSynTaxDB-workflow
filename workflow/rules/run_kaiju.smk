@@ -26,6 +26,7 @@ rule kaiju_name:
     
     Notes: 
         -p: print the full taxon path instead of just the taxon name.
+        -u: omit unclassified reads (saves space).
     """
     input:
         kaiju = scratch_dict["classified_kaiju_read_output"] / "{sample}_kaiju.txt",
@@ -42,7 +43,7 @@ rule kaiju_name:
             -t {input.nodes} \
             -n {input.names} \
             -i {input.kaiju} \
-            -p -o {output}
+            -p -u -o {output}
         """
 
 
