@@ -3,7 +3,7 @@ rule blast_reads:
         fwd_binned_reads= scratch_dict["read_binning"]["binned_reads"] / "{sample}" / "{sample_clade}_fwd.fastq",
         diamond_db = Path(config["input"]["diamond_file"]),
     output:
-        diamond_out = scratch_dict["diamond_blast"] / "{sample}" / "{sample_clade}.tsv",
+        diamond_out = temp(scratch_dict["diamond_blast"] / "{sample}" / "{sample_clade}.tsv"),
     conda:
         "../envs/blast.yaml"
     shell:
