@@ -105,7 +105,8 @@ def main():
     df = pd.concat(dfs)
 
     # reformat df so that taxons in genus_list are column headers
-    df = reformat_df(df)
+    # (long to wide)
+    # df = reformat_df(df)
 
     # save file
     df.to_csv(final_summary_outpath, sep='\t', index=False)
