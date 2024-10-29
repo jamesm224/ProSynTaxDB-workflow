@@ -25,6 +25,19 @@ cluster:
 default-resources: 
   - time="5-0"  # default time 
   - partition="sched_mit_chisholm"
-  - mem=60000  # default memory 
-  - cpus_per_task=5  # default threads/CPU/cores
+  - mem=50000  # default memory 
+  - cpus_per_task=1  # default: most rules aren't multi-threaded
   - tasks=1
+
+# adjust as needed (increase cpus_per_task and mem if files are larger)
+set-resources:
+  # multi-threaded rules
+  - run_trim_PE:cpus_per_task=10
+  - kaiju_run:cpus_per_task=10
+  - blast_reads:cpus_per_task=10
+
+  # memory intensive rules
+  - run_trim_PE:mem=100000
+  - kaiju_run:mem=100000
+  - blast_reads:mem=100000
+  - normalize_reads:mem=100000
