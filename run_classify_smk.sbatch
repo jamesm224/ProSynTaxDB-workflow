@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=classify-smk
-#SBATCH --time 5:00:00                         # wall clock limit
+#SBATCH --time 2-0                         # wall clock limit
 #SBATCH -p sched_mit_chisholm               # partition selection
-#SBATCH -c 1                                # tasks (essentially threads)
+#SBATCH -c 1                                # cores (essentially threads)
 #SBATCH -o logs/%j.out
 #SBATCH -e logs/%j.err
 
