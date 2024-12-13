@@ -8,7 +8,7 @@ This figure depicts a Phylogenetic Tree of All Pro and Syn in this Database
 
 # How to Install the Pipeline:
 
-1. Clone repository: (still in progress):
+1. Clone repository:
 
        git clone https://github.com/jamesm224/gorg_amz_classifier/
 
@@ -94,6 +94,8 @@ This pipeline outputs 2 main output files, both located in "results directory" p
         - Refer to "Read Normalization" Step in [Pipeline Workflow](#pipeline-workflow) for more information on how this value was calculated. 
 
 # Pipeline Workflow: 
+
+![Workflow Overview](workflow/images/ReadClassifierWorkflow.svg "Pipeline Workflow")
 
 1. Read Trimming: 
     - Raw reads are trimmed using bbduk with parameters: minlen=25 qtrim=rl trimq=10 ktrim=r k=23 mink=11 hdist=1
