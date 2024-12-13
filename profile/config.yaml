@@ -21,7 +21,7 @@ cluster:
     --output="logs/{rule}/{wildcards}.out"
     --error="logs/{rule}/{wildcards}.err"
 
-# adjust as needed (increase cpus_per_task and mem if files are larger)
+# adjust as needed (increase time and mem if files are large)
 default-resources: 
   - time="5-0"  # default time 
   - partition="sched_mit_chisholm"
@@ -29,9 +29,9 @@ default-resources:
   - cpus_per_task=1  # default: most rules aren't multi-threaded
   - tasks=1
 
-# adjust as needed (increase cpus_per_task and mem if files are larger)
+# adjust as needed (increase cpus_per_task and mem if files are large)
 set-resources:
-  # multi-threaded rules
+  # multi-threaded rules (allocate more cores)
   - run_trim_PE:cpus_per_task=10
   - kaiju_run:cpus_per_task=10
   - blast_reads:cpus_per_task=10

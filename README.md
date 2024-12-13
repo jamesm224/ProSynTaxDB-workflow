@@ -8,30 +8,108 @@ This figure depicts a Phylogenetic Tree of All Pro and Syn in this Database
 
 # How to Install the Pipeline:
 
-1. Install Conda/Mamba Environment:
+1. Clone repository: (still in progress):
+
+       git clone https://github.com/jamesm224/gorg_amz_classifier/
+
+2. Install Dependencies using Conda/Mamba:  
+Install Mamba following instructions on the [official Mamba documentation](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html).  
+Then, create a new environment with snakemake:
 
        mamba create -c bioconda -c conda-forge -n snakemake snakemake
    
        mamba activate snakemake
 
-2. Clone repository: (still in progress):
+# Setting Up the Pipeline:
 
-       git clone https://github.com/jamesm224/gorg_amz_classifier/
+1. Edit ```inputs/config.yaml``` file:  
+    - Required edits:  
+      - Change "nodes_file": to path to nodes.dmp file for Kaiju. 
+      - Change "names_file": to path to names.dmp file for Kaiju. 
+      - Change "fmi_file": to path to .fmi file for Kaiju. 
+      - Change "diamond_file": to path to Cycog6 database file for Blast. 
+      - Change "genus_list": to list of genus you would like to extract read count for. 
+        - Default: ['Synechococcus', 'Prochlorococcus', 'unclassified']
+        - Notes: 
+          - Reads classified as other genus not listed will be summed into 1 group called "other_genus". 
+          - "unclassified": include reads that are labeled "unclassified" or "cannot be assigned to a (non-viral) genus" by Kaiju. 
+        - Refer to [Interpreting Output Files](#interpreting-output-files) for more information. 
+      - Change "scratch directory": to path to folder for storing intermediate files. Such as: Kaiju outputs, Blast outputs. 
+      - Change "results directory": to path to directory for storing final output files: "summary_read_count.tsv" and "normalized_counts.tsv"
 
-# Usage:
+    - Optional:  
+      - Change "experiment_name": to name of your experiement. 
 
-1. Annotate sequences with GORG-AMZ database and normalize data. Configure the config files located in the ```config/``` and the ```input/``` directories. Additionally, create a samples.tsv file. An example is located in the ```input/``` directory.
+2. Create ```inputs/samples.tsv``` file for your samples: 
+    - Required columns: 
+      - "sample": unique name for sample. 
+      - "forward read": path to forward read. 
+      - "reverse read": path to reverse read.
+    - Feel free to add any other sample metadata columns. 
 
-2. Run Snakemake Script - we have included a test example, which should run once the config and input directories are properly set up. Please try running the following command on the test data to ensure the pipeline was installed correctly.
-   
-   ```sbatch run_classify_smk.sbatch```
+3. Edit ```profile/config.yaml``` file: 
+    - Required edits:
+      - Change "jobs": to number of jobs you would like to run at once. 
+      - Change "default-resources: time": to amount of time to allocate to all jobs in pipeline. 
+      - Change "default-resources: partition": to partition name to submit jobs to. 
+      - Change "default-resources: mem": to amount of memory to allocate. 
+      - Change all "set-resources: cpus_per_task": to number of cores to allocate for multi-threaded jobs. 
+      - Change all "set-resources: mem": to amount of memory to allocate for multi-threaded jobs. 
+
+4. Edit ```run_classify_smk.sbatch``` file:
+    - Change "--time": to amount of time to allocate to pipeline. 
+    - Change "--partition": to name of partition to send main run to. 
+
+5. Run pipeline: 
+    - Submit slurm script to cluster:  
+       ```
+       sbatch run_classify_smk.sbatch
+       ```
+
+# Test Run: 
+
+The ```inputs/example``` directory includes an example Python script to make the ```samples.tsv``` file located in ```inputs/``` from the read files in ```inputs/example/raw_reads/```.  
+
+To test run the pipeline on these files provided, follow all the steps in [Setting Up the Pipeline](#setting-up-the-pipeline) above except for Step 2. 
+
 
 # Interpreting Output Files:
 
-Files Located in ```results/``` directory
+This pipeline outputs 2 main output files, both located in "results directory" path specified in ```inputs/config.yaml``` file. 
 
-1. summary_read_count.tsv - contains the overall read counts for Prochlorococcus, Synechococcus, and Unclassified reads detected by the classifier
-2. 
+1. "summary_read_count.tsv": contains the total classified read counts for the genus listed in ```inputs/config.yaml``` file.   
+    - Columns:  
+      - taxon_name: name of genus. Values in this column are affected by genus list in config.yaml file. 
+      - reads: number of reads Kaiju classified as specified genus in "taxon_name" 
+      - percent: percent of this genus out of all reads in sample 
+      - sample_name: name of sample; same as "sample" column in ```samples.tsv```.
 
-     
+2. "normalized_counts.tsv": contains normalized genome equivalent for each Prochlorococcus.  
+    - Columns:  
+      - sample_name: name of sample; same as "sample" column in ```samples.tsv```.
+      - genus: genus classified by Kaiju ("Prochlorococcus" or "Synechococcus"). 
+      - clade: clade/subclade/ecotype classified by Kaiju. 
+      - alignment_length:  sum of alignment length of unique hits from Diamond Blast. 
+      - genome_equivalents: normalized abundance of classified clade in sample. 
+        - Refer to "Read Normalization" Step in [Pipeline Workflow](#pipeline-workflow) for more information on how this value was calculated. 
 
+# Pipeline Workflow: 
+
+1. Read Trimming: 
+    - Raw reads are trimmed using bbduk with parameters: minlen=25 qtrim=rl trimq=10 ktrim=r k=23 mink=11 hdist=1
+2. Kaiju Read Classification: 
+    - Reads are classified using kaiju with parameters: -m 11 -s 65 -E 0.05 -x -e 5
+    - Full taxon paths are added to kaiju output using ```kaiju-addTaxonNames``` command. 
+    - Kaiju classification summaries are obtained using ```kaiju2table``` command. 
+      - All output files are aggregated into final results table "summary_read_count.tsv" using ```workflow/scripts/classification_summary.py```
+3. Read Normalization: 
+    - Reads classified as "Prochlorococcus" and "Synechococcus" by Kaiju are extracted and compared against 424 CyCOGs using DIAMOND sequence aligner.  
+    - Reads with hits to 424 CyCOGs are used to normalize read count of each classified clade. 
+    - All normalized output files are aggregated into file results table "normalized_counts.tsv". 
+
+
+# Intermediate Files Description: 
+
+This pipeline outputs 2 main output files, both located in "results directory" path specified in ```inputs/config.yaml``` file. 
+
+- "classified_kaiju_read_output/*": 

@@ -9,9 +9,12 @@ SAMPLE_TABLE = pd.read_csv(config["input"]["sample table"], index_col="sample", 
 SAMPLE_TABLE.index = SAMPLE_TABLE.index.map(str)  # convert index (samples) to string 
 SAMPLES = SAMPLE_TABLE.index.tolist()  # obtain list of samples 
 
-##### Define output files and/or directories #####
+##### Define intermediate/results files/directories #####
 scratch_dir = Path(config["scratch directory"])
 results_dir = Path(config["results directory"])
+
+Path(scratch_dir).mkdir(exist_ok=True, parents=True)
+Path(results_dir).mkdir(exist_ok=True, parents=True)
 
 scratch_dict = {
     # read trimming 

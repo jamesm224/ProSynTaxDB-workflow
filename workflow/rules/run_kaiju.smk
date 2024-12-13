@@ -1,4 +1,3 @@
-
 rule kaiju_run:
     input:
         r1 = scratch_dict["trimmed_reads"] / "{sample}_1_trimmed.fastq.gz",
@@ -19,6 +18,7 @@ rule kaiju_run:
             -i {input.r1} {input.r2} \
             -o {output}
         """
+
 
 rule kaiju_name:
     """
@@ -46,6 +46,20 @@ rule kaiju_name:
             -p -u -o {output}
         """
 
+rule kaiju_summary_taxa:
+    input:
+        kaiju = scratch_dict["classified_kaiju_read_output"] / "{sample}_kaiju.txt",
+        nodes = Path(config["input"]["nodes_file"]),
+        names = Path(config["input"]["names_file"]),
+        fmi = Path(config["input"]["fmi_file"]),
+    output:
+        scratch_dict["classified_kaiju_read_output"] / "{sample}_kaiju_summary.tsv", 
+    conda:
+        "../envs/kaiju.yaml"
+    shell:
+        "kaiju2table -t {input.nodes} -n {input.names} -r genus "
+        "{input.kaiju} -o {output} "
+
 
 # other kaiju rules that aren't currently generated
 rule kaiju_krona:
@@ -62,17 +76,3 @@ rule kaiju_krona:
         "kaiju2krona -t {input.nodes} -n {input.names} "
         "-i {input.kaiju} -o {output} "
 
-
-rule kaiju_summary_taxa:
-    input:
-        kaiju = scratch_dict["classified_kaiju_read_output"] / "{sample}_kaiju.txt",
-        nodes = Path(config["input"]["nodes_file"]),
-        names = Path(config["input"]["names_file"]),
-        fmi = Path(config["input"]["fmi_file"]),
-    output:
-        scratch_dict["classified_kaiju_read_output"] / "{sample}_kaiju_summary.tsv", 
-    conda:
-        "../envs/kaiju.yaml"
-    shell:
-        "kaiju2table -t {input.nodes} -n {input.names} -r genus "
-        "{input.kaiju} -o {output} "
