@@ -66,6 +66,16 @@ Then, create a new environment with snakemake:
        sbatch run_classify_smk.sbatch
        ```
 
+6. Track Progress: 
+    - Snakemake log will be located in ```logs/[SLURM_JOB_ID].err```. This file will contain messages about pipeline progress. 
+    - In addition, each individual snakemake rule will create its own sub-directory for rule-specific log files. 
+    - Debug errors accordingly, if any. 
+    - Once all steps in the pipeline have completed, the file ```logs/[SLURM_JOB_ID].err``` will end with the following:
+      ```
+      N of N steps (100%) done
+      Complete log: .snakemake/log/YYYY-MM-DDTXXXXXX.XXXXXX.snakemake.log
+      ```
+
 # Test Run: 
 
 The ```inputs/example``` directory includes an example Python script to make the ```samples.tsv``` file located in ```inputs/``` from the read files in ```inputs/example/raw_reads/```.  
@@ -112,6 +122,13 @@ This pipeline outputs 2 main output files, both located in "results directory" p
 
 # Intermediate Files Description: 
 
-This pipeline outputs 2 main output files, both located in "results directory" path specified in ```inputs/config.yaml``` file. 
-
-- "classified_kaiju_read_output/*": 
+The following are descriptions of intermediate files, located in "scartch directory" path specified in ```inputs/config.yaml```, that may be useful for further analysis: 
+- "classified_kaiju_read_output/*_kaiju.txt": 
+  - Output from rule "kaiju_run", which runs the base Kaiju command 
+  - Columns: read status, read name, taxon_id
+- "classified_kaiju_read_output/*_kaiju_summary.tsv": 
+  - Output from rule "kaiju_summary_taxa", which runs the Kaiju command ```kaiju2table``` to summarize counts of reads for each genus from "*_kaiju.txt" file of the same sample. 
+  - Columns: file, percent reads, taxon_id, taxon_name
+- "classified_kaiju_read_output/*_names.out": 
+  - Output from rule "kaiju_name", which runs the Kaiju command ```kaiju-addTaxonNames``` to add full taxon path to read name
+  - Columns: read status, read name, taxon_id, full taxon
