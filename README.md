@@ -1,6 +1,6 @@
 # GORG-AMZ Classifer
 
-Hey Future Researchers who use this! Here are the code repository for the GORG-AMZ Classifier.
+Hey Future Researchers who use this! Here is the code repository for the GORG-AMZ Classifier.
 
 Made by James Mullet and Nhi Vo!
 ![updated_genomes (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/181bba39-b338-4553-97c3-8a7f553ec7fa)
