@@ -13,5 +13,6 @@ rule blast_reads:
             --db {input.diamond_db} \
             --out {output.diamond_out} \
             --threads {resources.cpus_per_task} \
-            --outfmt 6 qseqid sseqid pident nident length qstart qend sstart send evalue bitscore
+            --outfmt 6 qseqid sseqid pident nident length qstart qend sstart send evalue bitscore \
+            --max-target-seqs 1
         """
