@@ -1,0 +1,7 @@
+logs/*
+!logs/.temp.txt
+
+scratch/*
+results/*
+
+.snakemake/*

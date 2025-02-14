@@ -32,3 +32,12 @@ rule extract_fastq_reads:
         seqtk subseq {input.r1} {input.prosyn_read_name} > {output.fwd_prosyn_reads}
         """
         # seqtk subseq {input.r2} {input.clade_read_headers} > {output.reverse_reads}
+
+rule extracted_fastq_to_fasta: 
+    """
+    """
+    input: scratch_dict["prosyn_reads"]["extracted_reads"] / "{sample}_fwd.fastq", 
+    output: scratch_dict["prosyn_reads"]["extracted_reads"] / "{sample}_fwd.fasta", 
+    conda: "../envs/seqtk.yaml"
+    shell: "seqtk seq -A {input} > {output}"
+

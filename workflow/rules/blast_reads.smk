@@ -1,6 +1,6 @@
 rule blast_reads:
     input:
-        fwd_prosyn_reads= scratch_dict["prosyn_reads"]["extracted_reads"] / "{sample}_fwd.fastq", 
+        fwd_prosyn_reads= scratch_dict["prosyn_reads"]["extracted_reads"] / "{sample}_fwd.fasta", 
         diamond_db = Path(config["input"]["diamond_file"]),
     output:
         diamond_out = scratch_dict["diamond_blast"] / "{sample}.tsv",
