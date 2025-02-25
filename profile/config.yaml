@@ -7,7 +7,7 @@ latency-wait: 120
 keep-going: True
 configfile: inputs/config.yaml
 keep-incomplete: False
-# unlock: True
+# unlock: True # Useful to unlock snakemake pipeline if pipeline is locked
 
 cluster: 
   mkdir -p logs/{rule} &&
@@ -24,7 +24,7 @@ cluster:
 # adjust as needed (increase time and mem if files are large)
 default-resources: 
   - time="1-0"  # default time 
-  - partition="sched_mit_chisholm"
+  - partition="define_your_partition"
   - mem=50000  # default memory 
   - cpus_per_task=1  # default: most rules aren't multi-threaded
   - tasks=1
