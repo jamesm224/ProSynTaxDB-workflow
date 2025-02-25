@@ -4,10 +4,10 @@ input:
   sample table: inputs/samples.tsv
   adapter_file: inputs/all_illumina_adapters.fa
   cycog_file: inputs/cycog_len.tsv
-  nodes_file: /pool001/jmullet/gorgcycogamz20230927/updated_GORG_work/final_database_files/final_ncbi_pro_nodes.dmp
-  names_file: /pool001/jmullet/gorgcycogamz20230927/updated_GORG_work/final_database_files/final_ncbi_pro_names.dmp
-  fmi_file: /pool001/jmullet/gorgcycogamz20230927/updated_GORG_work/final_database_files/final_MARMICRODB2_virus.fmi
-  diamond_file: /pool001/jmullet/blast/cycog6/CyCOG6.dmnd
+  nodes_file: /path/to/ProSynTaxDB_nodes.dmp
+  names_file: /path/to/ProSynTaxDB_names.dmp
+  fmi_file: /path/to/ProSynTaxDB.fmi
+  diamond_file: /path/to/CyCOG6.dmnd
   
 
 classification_summary:
