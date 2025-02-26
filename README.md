@@ -20,6 +20,8 @@ Then, create a new environment with snakemake:
    
        mamba activate snakemake
 
+3. Download Database Files (Need to DO still!) - attach the zenodo and how to download link
+
 # Setting Up the Pipeline:
 
 1. Edit ```inputs/config.yaml``` file:  
