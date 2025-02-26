@@ -1,6 +1,6 @@
-# GORG-AMZ Classifer
+# ProSynTaxDB Workflow
 
-Hey Future Researchers who use this! Here is the code repository for the GORG-AMZ Classifier.
+Hey Future Researchers who use this! Here is the code repository for the ProSynTaxDB Workflow.
 
 Made by James Mullet and Nhi Vo!
 ![updated_genomes (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/181bba39-b338-4553-97c3-8a7f553ec7fa)
@@ -10,7 +10,7 @@ This figure depicts a Phylogenetic Tree of All Pro and Syn in this Database
 
 1. Clone repository:
 
-       git clone https://github.com/jamesm224/gorg_amz_classifier/
+       git clone https://github.com/jamesm224/ProSynTaxDB-workflow/
 
 2. Install Dependencies using Conda/Mamba:  
 Install Mamba following instructions on the [official Mamba documentation](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html).  
