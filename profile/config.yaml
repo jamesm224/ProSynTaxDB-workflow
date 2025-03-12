@@ -1,14 +1,22 @@
+### Snakemake Specifications ### 
 snakefile: workflow/Snakefile
-use-conda: True
-conda-frontend: mamba
+configfile: inputs/config.yaml
+
 rerun-incomplete: True
-jobs: 5  # number of jobs (samples) to process at once 
 latency-wait: 120
 keep-going: True
-configfile: inputs/config.yaml
 keep-incomplete: False
-# unlock: True # Useful to unlock snakemake pipeline if pipeline is locked
 
+# conda specifications
+use-conda: True
+conda-frontend: mamba
+# conda-prefix: path/to/conda/installations  # useful if you have a previous package installation of the pipeline
+
+# unlock: True  
+# dry-run: False  # useful to see
+
+
+### SLURM Specifications ### 
 cluster: 
   mkdir -p logs/{rule} &&
   sbatch
@@ -18,18 +26,24 @@ cluster:
     --mem={resources.mem}
     --time={resources.time}
     --job-name={rule}-%j
+    # specifies how stderr and stdout files are stored
     --output="logs/{rule}/{wildcards}.out"
     --error="logs/{rule}/{wildcards}.err"
 
-# adjust as needed (increase time and mem if files are large)
+
+### HPC Resource Specifications ### 
+# number of jobs/processes/samples running at once 
+jobs: 5  
+
+# adjust as needed (increase time and mem if input files are large)
 default-resources: 
   - time="1-0"  # default time 
   - partition="define_your_partition"
   - mem=50000  # default memory 
-  - cpus_per_task=1  # default: most rules aren't multi-threaded
+  - cpus_per_task=1  # default cpu: most rules are not multi-threaded
   - tasks=1
 
-# adjust as needed (increase cpus_per_task and mem if files are large)
+# adjust as needed (increase cpus_per_task and mem if input files are large)
 set-resources:
   # multi-threaded rules (allocate more cores)
   - run_trim_PE:cpus_per_task=10

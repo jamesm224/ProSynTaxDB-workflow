@@ -1,5 +1,3 @@
-experiment_name: read_classification
-
 input: 
   sample table: inputs/samples.tsv
   adapter_file: inputs/all_illumina_adapters.fa
