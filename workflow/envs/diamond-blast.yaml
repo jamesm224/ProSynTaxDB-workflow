@@ -3,5 +3,4 @@ channels:
 - bioconda
 - defaults
 dependencies:
-- blast
-- diamond
+- diamond=2.1.11

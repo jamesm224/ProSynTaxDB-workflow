@@ -5,7 +5,7 @@ rule blast_reads:
     output:
         diamond_out = scratch_dict["diamond_blast"] / "{sample}.tsv",
     conda:
-        "../envs/blast.yaml"
+        "../envs/diamond-blast.yaml"
     shell:
         """
         diamond blastx \

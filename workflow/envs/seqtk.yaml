@@ -3,4 +3,4 @@ channels:
 - bioconda
 - defaults
 dependencies:
-- seqtk
+- seqtk=r82

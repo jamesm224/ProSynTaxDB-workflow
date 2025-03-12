@@ -245,4 +245,4 @@ The following are descriptions of intermediate files, located in "scartch direct
   - Columns: read status, read name, taxon_id, full taxon
 
 ## Example Use Case Walkthrough
-An example of this pipeline walkthrough is located here: [Example ALOHA Analysis](docs/Example_Use_Case.ipynb). 
+An example of this pipeline walkthrough is located here: [Example ALOHA Analysis](docs/ALOHA_Use_Case.ipynb). 

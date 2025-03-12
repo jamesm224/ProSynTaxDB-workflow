@@ -61,18 +61,3 @@ rule kaiju_summary_taxa:
         "{input.kaiju} -o {output} "
 
 
-# other kaiju rules that aren't currently generated
-rule kaiju_krona:
-    input:
-        kaiju = scratch_dict["classified_kaiju_read_output"] / "{sample}_kaiju.txt",
-        nodes = Path(config["input"]["nodes_file"]),
-        names = Path(config["input"]["names_file"]),
-        fmi = Path(config["input"]["fmi_file"]),
-    output:
-        scratch_dict["classified_kaiju_read_output"] / "{sample}_kaiju.krona",
-    conda:
-        "../envs/kaiju.yaml"
-    shell:
-        "kaiju2krona -t {input.nodes} -n {input.names} "
-        "-i {input.kaiju} -o {output} "
-

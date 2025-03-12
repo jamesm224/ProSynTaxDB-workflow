@@ -3,4 +3,4 @@ channels:
 - bioconda
 - defaults
 dependencies:
-- kaiju
+- kaiju=1.10.1
