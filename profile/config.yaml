@@ -1,4 +1,3 @@
-### Snakemake Specifications ### 
 snakefile: workflow/Snakefile
 configfile: inputs/config.yaml
 
@@ -16,7 +15,7 @@ conda-frontend: mamba
 # dry-run: False  # useful to see
 
 
-### SLURM Specifications ### 
+# SLURM Specifications
 cluster: 
   mkdir -p logs/{rule} &&
   sbatch
@@ -26,12 +25,11 @@ cluster:
     --mem={resources.mem}
     --time={resources.time}
     --job-name={rule}-%j
-    # specifies how stderr and stdout files are stored
     --output="logs/{rule}/{wildcards}.out"
     --error="logs/{rule}/{wildcards}.err"
 
 
-### HPC Resource Specifications ### 
+# HPC Resource Specifications 
 # number of jobs/processes/samples running at once 
 jobs: 5  
 
