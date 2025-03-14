@@ -37,6 +37,12 @@ Nhi N. Vo <nvo@mit.edu>
 ### Installing the ProSynTaxDB Workflow
 1. Clone the ProSynTaxDB-workflow Github repository into your working directory:  
 
+       # (optional) create a new project directory
+       mkdir my_classification_project
+       cd my_classification_project  # change directory into project 
+
+- Create a copy of the workflow into your current path:  
+
        git clone https://github.com/jamesm224/ProSynTaxDB-workflow/
 
 ### Installing ProSynTaxDB
@@ -48,20 +54,43 @@ Download the following **required** files into a directory on your machine:
 3. ProSynTaxDB_file.fmi
 4. CyCOG6.dmnd
 
-The path to these files will be needed later. 
+- **Note**: The path to these files will be needed later in the `inputs/config.yaml` file in step 1 of section [Edit Workflow Specifications](#edit-workflow-specifications). 
 
 ### Installing Dependencies
-1. Install Mamba following instructions on the [official Mamba documentation](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html).
+1. Install Mamba following instructions on the [official Mamba documentation](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html). Or follow the steps below for installation into Linux system: 
 
-2. Then, install [Snakemake](https://snakemake.readthedocs.io/en/stable/) into a new mamba environment: 
+- Download miniforge (contains mamba) from Github (for Linux):  
 
-       # create a new mamba environment named snakemake and install snakemake 
-       mamba create -c bioconda -c conda-forge -n snakemake snakemake
+       wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+
+- Run the installer and set up mamba on your computer. :  
+
+       # when prompted, press ENTER or enter YES
+       bash Miniforge3-Linux-x86_64.sh 
+
+- Once installation is complete, open a new terminal window  
+
+       # check that installation worked
+       mamba -V  # prints version 
+
+- (Optional) This makes it so the base conda environment won’t automatically activate whenever you open a new terminal:  
+
+       conda config --set auto_activate_base false 
+
+- (Optional) Delete the installer  
+
+       rm Miniforge3-Linux-x86_64.sh
+
+2. Then, install [Snakemake v7.32.4](https://snakemake.readthedocs.io/en/stable/) into a new mamba environment: 
+
+       # create a new mamba environment named snakemake and install snakemake v7.32.4
+       mamba create -c bioconda -c conda-forge -n snakemake snakemake=7.32.4
    
-       # optional: test that your installation worked
-       mamba activate snakemake
-       snakemake --help
-       mamba deactivate
+- (Optional) test that your installation worked: 
+
+       mamba activate snakemake  # activate the environment 
+       snakemake --version  # print snakemake version 
+       mamba deactivate  # deactivate snakemake environment 
 
 ### Edit Workflow Specifications
 1. Edit experimental configuration file ```inputs/config.yaml```:  
@@ -87,11 +116,13 @@ The path to these files will be needed later.
   - Optional: 
     - Feel free to add any other sample metadata columns as they will not impact the workflow. 
 
-3. Edit Snakemake specifications and resource specifications in ```profile/config.yaml``` file: 
+3. Edit Snakemake specifications and resource specifications in ```profile/config.yaml``` file:  
+For tips on figuring out your cluster resource specification for this section, visit [HPC Resource Tips](docs/readme_extras/resource_tips.md).
+
   - **Required** edits:
     - `jobs`: number of jobs you would like to run at once on the compute cluster. 
-    - `default-resources: time`: amount of time to allocate to all jobs in pipeline. 
     - `default-resources: partition`: partition name to submit jobs to. 
+    - `default-resources: time`: amount of time to allocate to all jobs in pipeline. 
     - `default-resources: mem`: amount of memory to allocate to "default" rules (those not listed in `set-resources` section). 
     - `set-resources: cpus_per_task`: number of cores to allocate for multi-threaded jobs. 
     - `set-resources: mem`: amount of memory to allocate for multi-threaded jobs. 

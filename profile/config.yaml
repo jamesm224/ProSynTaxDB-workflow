@@ -35,11 +35,11 @@ jobs: 5
 
 # adjust as needed (increase time and mem if input files are large)
 default-resources: 
-  - time="1-0"  # default time 
   - partition="define_your_partition"
-  - mem=50000  # default memory 
-  - cpus_per_task=1  # default cpu: most rules are not multi-threaded
-  - tasks=1
+  - time="1-0"  # adjust according to partition 
+  - mem=50000  # adjust according to partition 
+  - cpus_per_task=1  # do not change; most rules are not multi-threaded 
+  - tasks=1  # do not change; all rules only require 1 task 
 
 # adjust as needed (increase cpus_per_task and mem if input files are large)
 set-resources:
