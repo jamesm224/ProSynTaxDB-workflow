@@ -93,49 +93,49 @@ Download the following **required** files into a directory on your machine:
        mamba deactivate  # deactivate snakemake environment 
 
 ### Edit Workflow Specifications
-1. Edit experimental configuration file ```inputs/config.yaml```:  
-  - **Required** edits:  
-    - `nodes_file`: path to your installation of ProSynTaxDB_nodes.dmp file for Kaiju (completed earlier in step [Installing ProSynTaxDB](#installing-prosyntaxdb)). 
-    - `names_file`: path to your installation of ProSynTaxDB_names.dmp file for Kaiju. 
-    - `fmi_file`: path to your installation of ProSynTaxDB_file.fmi file for Kaiju. 
-    - `diamond_file`: path to your installation of CyCOG6.dmnd database file for BLAST. 
-    - `genus_list`: list of genus you would like to extract raw read count for. 
-      - Default: ['Synechococcus', 'Prochlorococcus', 'unclassified']
-      - "unclassified": include reads that are labeled "unclassified" or "cannot be assigned to a (non-viral) genus" by Kaiju. 
-      - Reads classified as other genus not listed will be summed into 1 group called "other_genus". 
-      - Refer to [Interpreting Output Files](#interpreting-output-files) for more information. 
-    - `scratch directory`: path to folder for storing intermediate files. 
-      - Such as: trimmed read files, Kaiju outputs, and Blast outputs. 
-    - `results directory`: path to directory for storing final output files: "summary_read_count.tsv" and "normalized_counts.tsv"
+#### 1. Edit experimental configuration file ```inputs/config.yaml```:  
+- **Required** edits:  
+  - `nodes_file`: path to your installation of ProSynTaxDB_nodes.dmp file for Kaiju (completed earlier in step [Installing ProSynTaxDB](#installing-prosyntaxdb)). 
+  - `names_file`: path to your installation of ProSynTaxDB_names.dmp file for Kaiju. 
+  - `fmi_file`: path to your installation of ProSynTaxDB_file.fmi file for Kaiju. 
+  - `diamond_file`: path to your installation of CyCOG6.dmnd database file for BLAST. 
+  - `genus_list`: list of genus you would like to extract raw read count for. 
+    - Default: ['Synechococcus', 'Prochlorococcus', 'unclassified']
+    - "unclassified": include reads that are labeled "unclassified" or "cannot be assigned to a (non-viral) genus" by Kaiju. 
+    - Reads classified as other genus not listed will be summed into 1 group called "other_genus". 
+    - Refer to [Interpreting Output Files](#interpreting-output-files) for more information. 
+  - `scratch directory`: path to folder for storing intermediate files. 
+    - Such as: trimmed read files, Kaiju outputs, and Blast outputs. 
+  - `results directory`: path to directory for storing final output files: "summary_read_count.tsv" and "normalized_counts.tsv"
 
-2. Create ```inputs/samples.tsv``` file containing metadata for your samples: 
-  - **Required** columns: 
-    - `sample`: unique name for sample. 
-    - `forward read`: path to forward read file. 
-    - `reverse read`: path to reverse read file.
-  - Optional: 
-    - Feel free to add any other sample metadata columns as they will not impact the workflow. 
+#### 2. Create ```inputs/samples.tsv``` file containing metadata for your samples: 
+- **Required** columns: 
+  - `sample`: unique name for sample. 
+  - `forward read`: path to forward read file. 
+  - `reverse read`: path to reverse read file.
+- Optional: 
+  - Feel free to add any other sample metadata columns as they will not impact the workflow. 
 
-3. Edit Snakemake specifications and resource specifications in ```profile/config.yaml``` file:  
+#### 3. Edit Snakemake specifications and resource specifications in ```profile/config.yaml``` file:  
 For tips on figuring out your cluster resource specification for this section, visit [HPC Resource Tips](docs/readme_extras/resource_tips.md).
 
-  - **Required** edits:
-    - `jobs`: number of jobs you would like to run at once on the compute cluster. 
-    - `default-resources: partition`: partition name to submit jobs to. 
-    - `default-resources: time`: amount of time to allocate to all jobs in pipeline. 
-    - `default-resources: mem`: amount of memory to allocate to "default" rules (those not listed in `set-resources` section). 
-    - `set-resources: cpus_per_task`: number of cores to allocate for multi-threaded jobs. 
-    - `set-resources: mem`: amount of memory to allocate for multi-threaded jobs. 
-  - Optional edits:
-    - `conda-prefix`: path to previous conda installation, located in the hidden `./snakemake` directory.
-      - If you have run this pipeline before, you can save time on newer runs by referencing previous conda installations.  
-      - For example, you ran this workflow in `/home/my_username/project1/` and would like to run the workflow on another project, the "conda-prefix" path for the newer project would be: ./home/"my_username/project1/snakemake/conda"
+- **Required** edits:
+  - `jobs`: number of jobs you would like to run at once on the compute cluster. 
+  - `default-resources: partition`: partition name to submit jobs to. 
+  - `default-resources: time`: amount of time to allocate to all jobs in pipeline. 
+  - `default-resources: mem`: amount of memory to allocate to "default" rules (those not listed in `set-resources` section). 
+  - `set-resources: cpus_per_task`: number of cores to allocate for multi-threaded jobs. 
+  - `set-resources: mem`: amount of memory to allocate for multi-threaded jobs. 
+- Optional edits:
+  - `conda-prefix`: path to previous conda installation, located in the hidden `./snakemake` directory.
+    - If you have run this pipeline before, you can save time on newer runs by referencing previous conda installations.  
+    - For example, you ran this workflow in `/home/my_username/project1/` and would like to run the workflow on another project, the "conda-prefix" path for the newer project would be: ./home/"my_username/project1/snakemake/conda"
 
-4. Edit the main Snakemake workflow submission ```run_classify_smk.sbatch``` file:
-    - `--partition`: name of HPC partition to send main run to.
-      - To check what partitions you have access to: `sinfo`
-    - `--time`: total amount of time to allocate to the entire workflow. 
-      - Make sure this time does not exceed the partition's maximum alloted time
+#### 4. Edit the main Snakemake workflow submission ```run_classify_smk.sbatch``` file:
+  - `--partition`: name of HPC partition to send main run to.
+    - To check what partitions you have access to: `sinfo`
+  - `--time`: total amount of time to allocate to the entire workflow. 
+    - Make sure this time does not exceed the partition's maximum alloted time
 
 
 
@@ -157,7 +157,7 @@ Track Workflow Progress:
   ```
 
 ### Troubleshooting Guides
-Some tips on debugging: 
+**Some tips for debugging:**
 - Each rule/step in the pipeline will get its own .err log file. When a rule/step fails, check the subfolder with the rule's name and sample where it failed. 
 - If you get "OOM" ("Out of memory") errors, increase memory requests in `profile/config.yaml` file. 
   - This will often be logged in rule-specific log file, instead of the main Snakemake log file. 
