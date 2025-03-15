@@ -279,5 +279,12 @@ The following are descriptions of intermediate files, located in "scartch direct
   - Output from rule "kaiju_name", which runs the Kaiju command ```kaiju-addTaxonNames``` to add full taxon path to read name
   - Columns: read status, read name, taxon_id, full taxon
 
+## Limit of Detection Filtering
+To ensure the pipeline is only being utilized on samples with sufficient Prochlorococcus or Synechococcus, we recommend filtering to remove samples with low abundances of Prochlorococcus or Synechococcus. The benchmarking was performed using 1 million reads per sample. We recommend adjusting the filtering parameters for samples with lower sequencing coverage. For accurate ecotyping with samples with large percentages of unclassified reads or large imbalances of Prochlorococcus or Synechococcus may require different filtering specifications.
+
+We recommend using the 10% false positive rate cut-off for examining higher level differences (i.e. HL vs LL or 5.1 vs 5.2 vs 5.3). However, the 5% false positive rate cut-off is recommended for specific cluster/grade/clade identification. We recommend additional checking such as read mapping to ensure that the workflow works on your specific samples.
+
+**** Insert table of False Positive rate values here ***
+
 ## Example Use Case Walkthrough
 An example of this pipeline walkthrough is located here: [Example ALOHA Analysis](docs/ALOHA_Use_Case.ipynb). 
