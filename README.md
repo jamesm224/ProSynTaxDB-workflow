@@ -2,6 +2,10 @@
 
 [ADD INTRODUCTION TO WORKFLOW & DESCRIPTION.]
 
+*** This is the zenodo description
+Understanding the distrubion of the abundant and closely related picocyanobacteria, Prochlorococcus and Synechococcus, is essential for understanding marine ecosystems. These organisms are highly diverse, making the accurate classification of clades within each genus challenging. As a result, Prochlorococcus and Synechococcus populations are often characterized by a single representative strain. Here, we introduce ProSynTaxDB and its associated workflow, designed to significantly improve metagenomic classification of Prochlorococcus and Synechococcus using a substantial amount of high-quality genomic reference data collected over the past decade and from this study. ProSynTaxDB includes 1,260 single-cell amplified genomes, high-quality draft cultured genomes, and unpublished closed genomes, featuring new closed circular assemblies for 40 Prochlorococcus, 12 Synechococcus, and 10 marine heterotrophic bacterial strains. This includes 21 Prochlorococcus genomes that were previously partially assembled (Biller et al., 2014) and 16 genomes from unpublished isolates. Additionally, the database includes 13,403 genomes of marine heterotrophic bacteria, archaea, and viruses. ProSynTaxDB and the accompanying workflow can accurately identify clades in metagenomic samples containing at least 0.6% Prochlorococcus reads or 0.09% Synechococcus reads, thereby improving our understanding of these picocyanobacteria in low-abundance regions.
+
+
 ![updated_genomes (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/181bba39-b338-4553-97c3-8a7f553ec7fa)
 
 
