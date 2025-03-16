@@ -3,6 +3,8 @@
 [ADD INTRODUCTION TO WORKFLOW & DESCRIPTION.]
 
 *** This is the zenodo description
+
+
 Understanding the distrubion of the abundant and closely related picocyanobacteria, Prochlorococcus and Synechococcus, is essential for understanding marine ecosystems. These organisms are highly diverse, making the accurate classification of clades within each genus challenging. As a result, Prochlorococcus and Synechococcus populations are often characterized by a single representative strain. Here, we introduce ProSynTaxDB and its associated workflow, designed to significantly improve metagenomic classification of Prochlorococcus and Synechococcus using a substantial amount of high-quality genomic reference data collected over the past decade and from this study. ProSynTaxDB includes 1,260 single-cell amplified genomes, high-quality draft cultured genomes, and unpublished closed genomes, featuring new closed circular assemblies for 40 Prochlorococcus, 12 Synechococcus, and 10 marine heterotrophic bacterial strains. This includes 21 Prochlorococcus genomes that were previously partially assembled (Biller et al., 2014) and 16 genomes from unpublished isolates. Additionally, the database includes 13,403 genomes of marine heterotrophic bacteria, archaea, and viruses. ProSynTaxDB and the accompanying workflow can accurately identify clades in metagenomic samples containing at least 0.6% Prochlorococcus reads or 0.09% Synechococcus reads, thereby improving our understanding of these picocyanobacteria in low-abundance regions.
 
 
@@ -251,9 +253,13 @@ The output file `normalized_counts.tsv` contains normalized genome equivalent fo
   - `genome_equivalents`: normalized abundance of classified clade in sample. 
     - Refer to "Read Normalization" Step in [Pipeline Workflow](#pipeline-workflow) for more information on how this value was calculated. 
 
-### Limit of Detection  
-We performed a series of benchmarking to validate the accurary of this workflow (more details on methods and results described in publication linked in [Publication](#publication)).   
-Based on the results from validation experiments, we recommend the following filtering thresholds to keep misclassification rates at 5%:  
+### Limit of Detection Filtering
+To ensure the pipeline is only being utilized on samples with sufficient Prochlorococcus or Synechococcus, we recommend filtering to remove samples with low abundances of Prochlorococcus or Synechococcus. The benchmarking was performed using 1 million reads per sample. We recommend adjusting the filtering parameters for samples with lower sequencing coverage. For accurate ecotyping with samples with large percentages of unclassified reads or large imbalances of Prochlorococcus or Synechococcus may require different filtering specifications.
+
+We recommend using the 10% false positive rate cut-off for examining higher level differences (i.e. HL vs LL or 5.1 vs 5.2 vs 5.3). However, the 5% false positive rate cut-off is recommended for specific cluster/grade/clade identification. We recommend additional checking such as read mapping to ensure that the workflow works on your specific samples.
+
+   
+5% Misclassification Parameters (Cluster/Grade/Clade Level  Identification):  
 - *Prochlorococcus* Abundance > 0.57% 
   - Counts of *Prochlorococcus* reads out of all classified reads 
 - *Prochlorococcus*:*Synechococcus* ratio > 0.43
@@ -261,6 +267,16 @@ Based on the results from validation experiments, we recommend the following fil
 - *Synechococcus* Abundance > 0.09% 
   - Counts of *Synechococcus* reads out of all classified reads 
 - *Synechococcus*:*Prochlorococcus* ratio > 0.2 
+  - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
+
+10% Misclassification Parameters (Higher Level Taxonomic Identification):  
+- *Prochlorococcus* Abundance > xx% 
+  - Counts of *Prochlorococcus* reads out of all classified reads 
+- *Prochlorococcus*:*Synechococcus* ratio > xx
+  - Ratio calculated by counts of *Prochlorococcus* divided by counts of *Synechococcus*
+- *Synechococcus* Abundance > xx% 
+  - Counts of *Synechococcus* reads out of all classified reads 
+- *Synechococcus*:*Prochlorococcus* ratio > xx 
   - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
 
 ## Intermediate Files
@@ -279,12 +295,6 @@ The following are descriptions of intermediate files, located in "scartch direct
   - Output from rule "kaiju_name", which runs the Kaiju command ```kaiju-addTaxonNames``` to add full taxon path to read name
   - Columns: read status, read name, taxon_id, full taxon
 
-## Limit of Detection Filtering
-To ensure the pipeline is only being utilized on samples with sufficient Prochlorococcus or Synechococcus, we recommend filtering to remove samples with low abundances of Prochlorococcus or Synechococcus. The benchmarking was performed using 1 million reads per sample. We recommend adjusting the filtering parameters for samples with lower sequencing coverage. For accurate ecotyping with samples with large percentages of unclassified reads or large imbalances of Prochlorococcus or Synechococcus may require different filtering specifications.
-
-We recommend using the 10% false positive rate cut-off for examining higher level differences (i.e. HL vs LL or 5.1 vs 5.2 vs 5.3). However, the 5% false positive rate cut-off is recommended for specific cluster/grade/clade identification. We recommend additional checking such as read mapping to ensure that the workflow works on your specific samples.
-
-**** Insert table of False Positive rate values here ***
 
 ## Example Use Case Walkthrough
 An example of this pipeline walkthrough is located here: [Example ALOHA Analysis](docs/ALOHA_Use_Case.ipynb). 
