@@ -10,10 +10,6 @@ Here we present ProSynTaxDB, a curated protein sequence database and accompanyin
 ## Publication 
 [ADD CITATION]
 
-### Authors
-James I. Mullet <jmullet@mit.edu>   
-Nhi N. Vo <nvo@mit.edu> 
-
 ## Table of Contents
 * Setting up the Workflow
   * [Installing the ProSynTaxDB Workflow](#installing-the-prosyntaxdb-workflow) 
@@ -108,6 +104,8 @@ Download the following **required** files into a directory on your machine:
   - `results directory`: path to directory for storing final output files: "summary_read_count.tsv" and "normalized_counts.tsv"
 
 #### 2. Create ```inputs/samples.tsv``` file containing metadata for your samples: 
+We have created an example Python script that creates a samples.tsv file from raw read files located in a directory: [Example Python Script](inputs/example/make_samples_tsv.py). 
+
 - **Required** columns: 
   - `sample`: unique name for sample. 
   - `forward read`: path to forward read file. 
@@ -188,7 +186,7 @@ Below is a description of the steps in ProSynTaxDB workflow.
 ![Workflow Overview](docs/images/figure_2.svg "Pipeline Workflow")
 
 **1. Quality Control:**  
-  - Low-quality regions and adapter sequences are removed from raw Illumina paired-end reads using (BBDuk v37.62)[https://archive.jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/] from BBTools suite with parameters: 
+  - Low-quality regions and adapter sequences are removed from raw Illumina paired-end reads using [BBDuk v37.62](https://archive.jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/) from BBTools suite with parameters: 
     - `minlen=25`: discard reads shorter than 25bp after trimming to Q10 
     - `qtrim=rl`: quality-trimming of both left and ride side
     - `trimq=10`: quality-trim to Q10 using the Phred algorithm
@@ -226,33 +224,34 @@ Below is a description of the steps in ProSynTaxDB workflow.
 
 
 ## Results
-This pipeline outputs 2 main output files, both located in "results directory" path specified in ```inputs/config.yaml``` file. 
+This pipeline outputs 2 main output files (listed below), both located in "results directory" path specified in ```inputs/config.yaml``` file. 
 
-### Raw Counts Output
+### 1. Raw Counts Output
 The output file `summary_read_count.tsv` contains the total classified raw read counts for the genus listed in ```inputs/config.yaml``` file.   
 - Column Description:  
-  - `sample_name`: name of sample; same as "sample" column in ```samples.tsv```.
-  - `taxon_name`: name of genus. Values in this column are affected by genus list in config.yaml file. 
+  - `sample_name`: name of sample
+    - Same as the "sample" column in ```samples.tsv```.
+  - `taxon_name`: name of genus 
+    - Taxons in this column are defined by the genus list specified in `inputs/config.yaml` file. 
   - `reads`: number of reads Kaiju classified as specified genus in "taxon_name" 
-  - `percent`: percent of this genus out of all reads in sample 
+  - `percent`: percent of this genus relative to all reads in the sample 
 
-### Normalized Genome Equivalent Output
+### 2. Normalized Genome Equivalent Output
 The output file `normalized_counts.tsv` contains normalized genome equivalent for each *Prochlorococcus* and *Synechococcus* clade/subclade/ecotype in the sample.  
 - Column Description:  
-  - `sample_name`: name of sample; same as "sample" column in ```samples.tsv```.
-  - `genus`: genus classified by Kaiju ("Prochlorococcus" or "Synechococcus"). 
-  - `clade`: clade/subclade/ecotype classified by Kaiju. 
-  - `alignment_length`:  sum of alignment length of unique hits from Diamond Blast. 
-  - `genome_equivalents`: normalized abundance of classified clade in sample. 
-    - Refer to "Read Normalization" Step in [Pipeline Workflow](#pipeline-workflow) for more information on how this value was calculated. 
+  - `sample_name`: name of sample; same as the "sample" column in ```samples.tsv```.
+  - `genus`: genus classified by Kaiju ("*Prochlorococcus*" or "*Synechococcus*")
+  - `clade`: ecotype/cluster/clade/grade classified by Kaiju 
+  - `alignment_length`:  sum of alignment length of unique hits from Diamond Blast 
+  - `genome_equivalents`: normalized abundance of classified ecotype/cluster/clade/grade in sample 
+    - Refer to "Read Normalization" Step in [Pipeline Workflow](#pipeline-workflow) for more information on how this value was calculated 
 
 ### Limit of Detection Filtering
-To ensure the pipeline is only being utilized on samples with sufficient Prochlorococcus or Synechococcus, we recommend filtering to remove samples with low abundances of Prochlorococcus or Synechococcus. The benchmarking was performed using 1 million reads per sample. We recommend adjusting the filtering parameters for samples with lower sequencing coverage. For accurate ecotyping with samples with large percentages of unclassified reads or large imbalances of Prochlorococcus or Synechococcus may require different filtering specifications.
+In order to determine the minimal abundance of *Prochlorococcus* and *Synechococcus*, we performed simulations described in publication listed in the [Publication](#publication) section. 
 
-We recommend using the 10% false positive rate cut-off for examining higher level differences (i.e. HL vs LL or 5.1 vs 5.2 vs 5.3). However, the 5% false positive rate cut-off is recommended for specific cluster/grade/clade identification. We recommend additional checking such as read mapping to ensure that the workflow works on your specific samples.
+We recommend the 5% false positive rate threshold for accurate cluster/clade/grade delineations.
 
-   
-5% Misclassification Parameters (Cluster/Grade/Clade Level  Identification):  
+**5% Misclassification Parameters** (Cluster/Grade/Clade Level  Identification):  
 - *Prochlorococcus* Abundance > 0.57% 
   - Counts of *Prochlorococcus* reads out of all classified reads 
 - *Prochlorococcus*:*Synechococcus* ratio > 0.43
@@ -262,18 +261,18 @@ We recommend using the 10% false positive rate cut-off for examining higher leve
 - *Synechococcus*:*Prochlorococcus* ratio > 0.2 
   - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
 
-10% Misclassification Parameters (Higher Level Taxonomic Identification):  
-- *Prochlorococcus* Abundance > xx% 
+**10% Misclassification Parameters** (Higher Level Taxonomic Identification):  
+- *Prochlorococcus* Abundance > 0.28% 
   - Counts of *Prochlorococcus* reads out of all classified reads 
-- *Prochlorococcus*:*Synechococcus* ratio > xx
+- *Prochlorococcus*:*Synechococcus* ratio > 0.24
   - Ratio calculated by counts of *Prochlorococcus* divided by counts of *Synechococcus*
-- *Synechococcus* Abundance > xx% 
+- *Synechococcus* Abundance > 0.04% 
   - Counts of *Synechococcus* reads out of all classified reads 
-- *Synechococcus*:*Prochlorococcus* ratio > xx 
+- *Synechococcus*:*Prochlorococcus* ratio > 0.10
   - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
 
 ## Intermediate Files
-The following are descriptions of intermediate files, located in "scartch directory" path specified in ```inputs/config.yaml```, that may be useful for further analysis:  
+The following are descriptions of intermediate files, located in "scratch directory" path specified in ```inputs/config.yaml```, that may be useful for further analysis:  
 
 - "classified_kaiju_read_output/*_kaiju.txt": 
   - Output from rule "kaiju_run", which runs the base Kaiju command 
@@ -287,7 +286,3 @@ The following are descriptions of intermediate files, located in "scartch direct
 - "classified_kaiju_read_output/*_names.out": 
   - Output from rule "kaiju_name", which runs the Kaiju command ```kaiju-addTaxonNames``` to add full taxon path to read name
   - Columns: read status, read name, taxon_id, full taxon
-
-
-## Example Use Case Walkthrough
-An example of this pipeline walkthrough is located here: [Example ALOHA Analysis](docs/ALOHA_Use_Case.ipynb). 
