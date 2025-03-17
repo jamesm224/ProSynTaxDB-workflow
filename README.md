@@ -2,7 +2,7 @@
 
 ## Introduction
 
-
+Here we present ProSynTaxDB, a curated protein sequence database and accompanying workflow aimed at enhancing the taxonomic resolution of Prochlorococcus and Synechococcus classification. ProSynTaxDB includes proteins from 1,260 genomes of Prochlorococcus and Synechococcus, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTaxDB incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding Prochlorococcus and Synechococcus. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for Prochlorococcus or 0.09% of reads for Synechococcus. 
 
 ![updated_genomes (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/181bba39-b338-4553-97c3-8a7f553ec7fa)
 
