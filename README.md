@@ -1,4 +1,4 @@
-# ProSynTaxDB Workflow: taxonomic classification of * Prochlorococcus * and Synechococcus
+# ProSynTaxDB Workflow: taxonomic classification of *Prochlorococcus* and Synechococcus
 
 [ADD INTRODUCTION TO WORKFLOW & DESCRIPTION.]
 
