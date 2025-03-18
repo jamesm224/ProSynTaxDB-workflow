@@ -1,14 +1,14 @@
 # ProSynTaxDB Workflow: taxonomic classification of *Prochlorococcus* and *Synechococcus*
 
+
 ## Introduction
-
-Here we present ProSynTaxDB, a curated protein sequence database and accompanying workflow aimed at enhancing the taxonomic resolution of *Prochlorococcus* and *Synechococcus* classification. ProSynTaxDB includes proteins from 1,260 genomes of *Prochlorococcus* and *Synechococcus*, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTaxDB incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding *Prochlorococcus* and *Synechococcus*. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for *Prochlorococcus* or 0.09% of reads for *Synechococcus*. 
-
-![updated_genomes (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/181bba39-b338-4553-97c3-8a7f553ec7fa)
+Here we present a workflow accompanying ProSynTaxDB, a curated protein sequence database aimed at enhancing the taxonomic resolution of *Prochlorococcus* and *Synechococcus* classification. ProSynTaxDB includes proteins from 1,260 genomes of *Prochlorococcus* and *Synechococcus*, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTaxDB incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding *Prochlorococcus* and *Synechococcus*. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for *Prochlorococcus* or 0.09% of reads for *Synechococcus*. 
 
 
 ## Publication 
-[ADD CITATION]
+This workflow and the accompanying ProSynTaxDB database is described in:  
+
+         [ADD CITATION]
 
 ## Table of Contents
 * Setting up the Workflow
@@ -25,7 +25,6 @@ Here we present ProSynTaxDB, a curated protein sequence database and accompanyin
   * [Normalized Genome Equivalent Output](#normalized-genome-equivalent-output)
   * [Limit of Detection](#limit-of-detection)
 * [Intermediate Files](#intermediate-files)
-
 
 
 ## Setting up the Workflow
@@ -153,31 +152,8 @@ Track Workflow Progress:
   Complete log: .snakemake/log/YYYY-MM-DDTXXXXXX.XXXXXX.snakemake.log
   ```
 
-### Troubleshooting Guides
-**Some tips for debugging:**
-- Each rule/step in the pipeline will get its own .err log file. When a rule/step fails, check the subfolder with the rule's name and sample where it failed. 
-- If you get "OOM" ("Out of memory") errors, increase memory requests in `profile/config.yaml` file. 
-  - This will often be logged in rule-specific log file, instead of the main Snakemake log file. 
-
-**Locked directory error**:  
-If you get the error message "Error: Directory cannot be locked":
-- Make sure that all jobs from your previous run of the pipeline have completed/cancelled
-  - To cancel all jobs submitted by your account to a particular partition: 
-    ```
-    scancel -u <your_username> -p <partition_name>
-    ```
-- In `profile/config.yaml` file: uncomment line "unlock: True" (remove the "#")
-- Activate your Snakemake conda environment in the command line terminal: 
-  ```
-  mamba activate snakemake
-  ```
-- Run Snakemake to unlock the workflow: 
-  ```
-  snakemake --profile profile
-  ```
-- In `profile/config.yaml` file: comment line "unlock: True" (add the "#")
-- Re-run the pipeline following: [Submitting Main Script](#submitting-main-script). The lock should now be removed. 
-
+### Troubleshooting Guide
+We have some tips for troubleshooting and debugging for common errors located [here](docs/readme_extras/debugging_tips.md). 
 
 
 ## Pipeline Workflow
@@ -196,7 +172,7 @@ Below is a description of the steps in ProSynTaxDB workflow.
     - `hdist=1`: Maximum Hamming distance for ref kmers
 
 **2. Taxonomic Classification:**  
-  - Reads are classified against the ProSynTaxSB using Kaiju v1.10.1 with parameters: 
+  - Reads are classified against the ProSynTaxSB using [Kaiju v1.10.1](https://github.com/bioinformatics-centre/kaiju) with parameters: 
     - `-m 11`: Minimum match length
     - `-s 65`: Minimum match score in Greedy mode
     - `-E 0.05`: Minimum E-value in Greedy mode
@@ -212,15 +188,14 @@ Below is a description of the steps in ProSynTaxDB workflow.
     - `-p`: print the full taxon path instead of just the taxon name.
     - `-u`: omit unclassified reads (saves disk space compared to output of all reads).
   - FASTQ header name and full taxonomic classification of reads classified as "*Prochlorococcus*" and "*Synechococcus*" by Kaiju are extracted using the Bash command `grep`
-     - Extracted FASTQ header names are used to extract FASTA sequence using seqtk vr82 for downstream BLAST 
-  - Extracted FASTA sequences are compared against 424 CyCOGs using DIAMOND Blastx v2.1.11 sequence aligner with parameter: 
+     - Extracted FASTQ header names are used to extract FASTA sequence using [seqtk vr82](https://github.com/lh3/seqtk) for downstream BLAST 
+  - Extracted FASTA sequences are compared against 424 CyCOGs using DIAMOND [Blastx v2.1.11](https://github.com/bbuchfink/diamond) sequence aligner with parameter: 
     - `max-target-seqs 1`: maximum number of target sequences per query to report alignments for. 
   - Using the custom Python script `normalize_all_cycog.py`, reads are normalized by clade following these steps: 
     - Filter for reads with hits to the 424 CyCOGs protein database 
     - Obtain sum of alignment length 
     - Divide alignment length of read mapped to CyCOG by the sum of 424 CyCOG mean length, which is 59404.6391
   - All normalized output files are aggregated into file results table `normalized_counts.tsv`. 
-
 
 
 ## Results
@@ -249,6 +224,8 @@ The output file `normalized_counts.tsv` contains normalized genome equivalent fo
 ### Limit of Detection Filtering
 To assess the accuracy of *Prochlorococcus* and *Synechococcus* cluster/clade/grade classifications, we generated mock metagenome sequence datasets and conducted simulations following the methods outlined in Coe et al. (2025) to calculate misclassification rates. To maintain misclassification rates below either 10% or 5%, we determined the minimum *Prochlorococcus*:*Synechococcus* (or vice versa) ratios, as detailed below. For broader classifications at the cluster or ecotype level, a 10% misclassification rate is sufficient.  However, for more precise subcluster/clade/grade delineations, we recommend using a 5% false positive rate threshold.
 
+Scripts used for genome subsetting and read simulation are located in the [validation](validation) directory. 
+
 **5% Misclassification Parameters** (Cluster/Grade/Clade Level  Identification):  
 - *Prochlorococcus* Abundance > 0.57% 
   - Counts of *Prochlorococcus* reads out of all classified reads 
@@ -269,18 +246,6 @@ To assess the accuracy of *Prochlorococcus* and *Synechococcus* cluster/clade/gr
 - *Synechococcus*:*Prochlorococcus* ratio > 0.10
   - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
 
+
 ## Intermediate Files
-The following are descriptions of intermediate files, located in "scratch directory" path specified in ```inputs/config.yaml```, that may be useful for further analysis:  
-
-- "classified_kaiju_read_output/*_kaiju.txt": 
-  - Output from rule "kaiju_run", which runs the base Kaiju command 
-  - Columns: read status, read name, taxon_id
-
-- "classified_kaiju_read_output/*_kaiju_summary.tsv": 
-  - Output from rule "kaiju_summary_taxa", which runs the Kaiju command ```kaiju2table``` to summarize counts of reads for each genus from "*_kaiju.txt" file of the same sample. 
-  - These intermediate files are inputs for final output table: `summary_read_count.tsv`
-  - Columns: file, percent reads, taxon_id, taxon_name
-
-- "classified_kaiju_read_output/*_names.out": 
-  - Output from rule "kaiju_name", which runs the Kaiju command ```kaiju-addTaxonNames``` to add full taxon path to read name
-  - Columns: read status, read name, taxon_id, full taxon
+This workflow produces several intermediate files that may be useful for additional analysis. Descriptions of these files can be found [here](docs/readme_extras/intermediate_files.md). 
