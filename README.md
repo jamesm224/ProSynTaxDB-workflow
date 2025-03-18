@@ -2,7 +2,9 @@
 
 
 ## Introduction
-Here we present a workflow accompanying ProSynTaxDB, a curated protein sequence database aimed at enhancing the taxonomic resolution of *Prochlorococcus* and *Synechococcus* classification. ProSynTaxDB includes proteins from 1,260 genomes of *Prochlorococcus* and *Synechococcus*, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTaxDB incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding *Prochlorococcus* and *Synechococcus*. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for *Prochlorococcus* or 0.09% of reads for *Synechococcus*. 
+Here we present a workflow that accompanies ProSynTaxDB - a curated protein sequence database aimed at enhancing the taxonomic resolution of *Prochlorococcus* and *Synechococcus* classification. ProSynTaxDB includes proteins from 1,260 genomes of *Prochlorococcus* and *Synechococcus*, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTaxDB incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding *Prochlorococcus* and *Synechococcus*. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for *Prochlorococcus* or 0.09% of reads for *Synechococcus*. 
+
+![Phylogenetic Tree](docs/images/figure1.svg "Phylogenetic Tree")
 
 
 ## Publication 
@@ -97,7 +99,7 @@ Download the following **required** files into a directory on your machine:
     - Default: ['Synechococcus', 'Prochlorococcus', 'unclassified']
     - "unclassified": include reads that are labeled "unclassified" or "cannot be assigned to a (non-viral) genus" by Kaiju. 
     - Reads classified as other genus not listed will be summed into 1 group called "other_genus". 
-    - Refer to [Interpreting Output Files](#interpreting-output-files) for more information. 
+    - Refer to [Results](#results) for more information. 
   - `scratch directory`: path to folder for storing intermediate files. 
     - Such as: trimmed read files, Kaiju outputs, and Blast outputs. 
   - `results directory`: path to directory for storing final output files: "summary_read_count.tsv" and "normalized_counts.tsv"
@@ -159,7 +161,7 @@ We have some tips for troubleshooting and debugging for common errors located [h
 ## Pipeline Workflow
 Below is a description of the steps in ProSynTaxDB workflow. 
 
-![Workflow Overview](docs/images/figure_2.svg "Pipeline Workflow")
+![Workflow Overview](docs/images/figure2.svg "Pipeline Workflow")
 
 **1. Quality Control:**  
   - Low-quality regions and adapter sequences are removed from raw Illumina paired-end reads using [BBDuk v37.62](https://archive.jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/) from BBTools suite with parameters: 
@@ -226,24 +228,30 @@ To assess the accuracy of *Prochlorococcus* and *Synechococcus* cluster/clade/gr
 
 Scripts used for genome subsetting and read simulation are located in the [validation](validation) directory. 
 
-**5% Misclassification Parameters** (Cluster/Grade/Clade Level  Identification):  
+#### *Prochlorococcus* Filtering Parameters
+##### 5% Misclassification Parameters  
 - *Prochlorococcus* Abundance > 0.57% 
-  - Counts of *Prochlorococcus* reads out of all classified reads 
-- *Prochlorococcus*:*Synechococcus* ratio > 0.43
+  - Counts of *Prochlorococcus* reads out of *all* classified reads 
+- Ratio of *Prochlorococcus*:*Synechococcus* > 0.43
   - Ratio calculated by counts of *Prochlorococcus* divided by counts of *Synechococcus*
-- *Synechococcus* Abundance > 0.09% 
-  - Counts of *Synechococcus* reads out of all classified reads 
-- *Synechococcus*:*Prochlorococcus* ratio > 0.2 
-  - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
 
-**10% Misclassification Parameters** (Higher Level Taxonomic Identification):  
+##### 10% Misclassification Parameters
 - *Prochlorococcus* Abundance > 0.28% 
   - Counts of *Prochlorococcus* reads out of all classified reads 
-- *Prochlorococcus*:*Synechococcus* ratio > 0.24
+- Ratio of *Prochlorococcus*:*Synechococcus* > 0.24
   - Ratio calculated by counts of *Prochlorococcus* divided by counts of *Synechococcus*
-- *Synechococcus* Abundance > 0.04% 
+
+#### *Synechococcus* Filtering Parameters
+##### 5% Misclassification Parameters  
+- *Synechococcus* Abundance > 0.09% 
   - Counts of *Synechococcus* reads out of all classified reads 
-- *Synechococcus*:*Prochlorococcus* ratio > 0.10
+- Ratio *Synechococcus*:*Prochlorococcus* > 0.2 
+  - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
+
+##### 10% Misclassification Parameters
+- *Synechococcus* Abundance > 0.04% 
+  - Counts of *Synechococcus* reads out of *all* classified reads 
+- Ratio *Synechococcus*:*Prochlorococcus* > 0.10
   - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
 
 
