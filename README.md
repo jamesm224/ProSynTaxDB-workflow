@@ -17,7 +17,7 @@ This workflow and the accompanying ProSynTaxDB database is described in:
   * [Installing the ProSynTaxDB Workflow](#installing-the-prosyntaxdb-workflow) 
   * [Installing ProSynTaxDB](#installing-prosyntaxdb)
   * [Installing Dependencies](#installing-dependencies)
-  * [Edit Workflow Specifications](#edit-workflow-specifications)
+  * [Edit Workflow Parameters](#edit-workflow-parameters)
 * Running the Workflow
   * [Submitting Main Script](#submitting-main-script)
   * [Troubleshooting Guides](#troubleshooting-guides)
@@ -25,7 +25,7 @@ This workflow and the accompanying ProSynTaxDB database is described in:
 * Results
   * [Raw Counts Output](#raw-counts-output)
   * [Normalized Genome Equivalent Output](#normalized-genome-equivalent-output)
-  * [Limit of Detection](#limit-of-detection)
+* [Limit of Detection Filtering](#limit-of-detection-filtering)
 * [Intermediate Files](#intermediate-files)
 
 
@@ -50,7 +50,7 @@ Download the following **required** files into a directory on your machine:
 3. ProSynTaxDB_file.fmi
 4. CyCOG6.dmnd
 
-- **Note**: The path to these files will be needed later in the `inputs/config.yaml` file in step 1 of section [Edit Workflow Specifications](#edit-workflow-specifications). 
+- **Note**: The path to these files will be needed later in the `inputs/config.yaml` file in step 1 of section [Edit Workflow Parameters](#edit-workflow-parameters). 
 
 ### Installing Dependencies
 1. Install Mamba following instructions on the [official Mamba documentation](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html). Or follow the steps below for installation into Linux system: 
@@ -88,8 +88,10 @@ Download the following **required** files into a directory on your machine:
        snakemake --version  # print snakemake version 
        mamba deactivate  # deactivate snakemake environment 
 
-### Edit Workflow Specifications
-#### 1. Edit experimental configuration file ```inputs/config.yaml```:  
+### Edit Workflow Parameters
+#### 1. Edit ```inputs/config.yaml```:  
+This is the experimental configuration file, where you will specify ProSynTaxDB file paths, directory paths, and more. 
+
 - **Required** edits:  
   - `nodes_file`: path to your installation of ProSynTaxDB_nodes.dmp file for Kaiju (completed earlier in step [Installing ProSynTaxDB](#installing-prosyntaxdb)). 
   - `names_file`: path to your installation of ProSynTaxDB_names.dmp file for Kaiju. 
@@ -102,10 +104,10 @@ Download the following **required** files into a directory on your machine:
     - Refer to [Results](#results) for more information. 
   - `scratch directory`: path to folder for storing intermediate files. 
     - Such as: trimmed read files, Kaiju outputs, and Blast outputs. 
-  - `results directory`: path to directory for storing final output files: "summary_read_count.tsv" and "normalized_counts.tsv"
+  - `results directory`: path to directory for storing final output files: "summary_read_count.tsv" and "normalized_counts.tsv".
 
-#### 2. Create ```inputs/samples.tsv``` file containing metadata for your samples: 
-We have created an example Python script that creates a samples.tsv file from raw read files located in a directory: [Example Python Script](inputs/example/make_samples_tsv.py). 
+#### 2. Create ```inputs/samples.tsv```: 
+This file should contain metadata for your samples. We have created an example Python script that creates a samples.tsv file from raw read files located in a directory: [Example Python Script](inputs/example/make_samples_tsv.py). 
 
 - **Required** columns: 
   - `sample`: unique name for sample. 
@@ -114,8 +116,8 @@ We have created an example Python script that creates a samples.tsv file from ra
 - Optional: 
   - Feel free to add any other sample metadata columns as they will not impact the workflow. 
 
-#### 3. Edit Snakemake specifications and resource specifications in ```profile/config.yaml``` file:  
-For tips on figuring out your cluster resource specification for this section, visit [HPC Resource Tips](docs/readme_extras/resource_tips.md).
+#### 3. Edit ```profile/config.yaml```:  
+This file contains Snakemake specifications and compute resource (HPC) specifications. For tips on determining your HPC cluster resource specification for this section, visit [HPC Resource Tips](docs/readme_extras/resource_tips.md).
 
 - **Required** edits:
   - `jobs`: number of jobs you would like to run at once on the compute cluster. 
@@ -127,19 +129,22 @@ For tips on figuring out your cluster resource specification for this section, v
 - Optional edits:
   - `conda-prefix`: path to previous conda installation, located in the hidden `./snakemake` directory.
     - If you have run this pipeline before, you can save time on newer runs by referencing previous conda installations.  
-    - For example, you ran this workflow in `/home/my_username/project1/` and would like to run the workflow on another project, the "conda-prefix" path for the newer project would be: ./home/"my_username/project1/snakemake/conda"
+    - For example, you ran this workflow in `/home/my_username/project1/` and would like to run the workflow on another project, the "conda-prefix" path for the newer project would be: "/home/my_username/project1/.snakemake/conda"
 
-#### 4. Edit the main Snakemake workflow submission ```run_classify_smk.sbatch``` file:
+#### 4. Edit ```run_classify_smk.sbatch```:
+This file is the main Snakemake workflow submission.  
+
   - `--partition`: name of HPC partition to send main run to.
-    - To check what partitions you have access to: `sinfo`
-  - `--time`: total amount of time to allocate to the entire workflow. 
-    - Make sure this time does not exceed the partition's maximum alloted time
+    - To check what partitions you have access to: `sinfo`.
+  - `--time`: total amount of time to allocate to the **entire** workflow.
+    - Make sure this time does not exceed the partition's maximum alloted time.
+    - You should allocate more time the more samples you have.
 
 
 
 ## Running the Workflow
 ### Submitting Main Script
-Run the pipeline by submitting `run_classify_smk.sbatch` script to cluster:   
+Run the pipeline by submitting `run_classify_smk.sbatch` script to the HPC cluster:   
 
     sbatch run_classify_smk.sbatch  
 
