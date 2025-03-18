@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Here we present ProSynTaxDB, a curated protein sequence database and accompanying workflow aimed at enhancing the taxonomic resolution of Prochlorococcus and Synechococcus classification. ProSynTaxDB includes proteins from 1,260 genomes of Prochlorococcus and Synechococcus, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTaxDB incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding Prochlorococcus and Synechococcus. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for Prochlorococcus or 0.09% of reads for Synechococcus. 
+Here we present ProSynTaxDB, a curated protein sequence database and accompanying workflow aimed at enhancing the taxonomic resolution of *Prochlorococcus* and *Synechococcus* classification. ProSynTaxDB includes proteins from 1,260 genomes of *Prochlorococcus* and *Synechococcus*, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTaxDB incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding *Prochlorococcus* and *Synechococcus*. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for *Prochlorococcus* or 0.09% of reads for *Synechococcus*. 
 
 ![updated_genomes (2)](https://github.com/jamesm224/gorg_db_update/assets/86495895/181bba39-b338-4553-97c3-8a7f553ec7fa)
 
@@ -247,9 +247,7 @@ The output file `normalized_counts.tsv` contains normalized genome equivalent fo
     - Refer to "Read Normalization" Step in [Pipeline Workflow](#pipeline-workflow) for more information on how this value was calculated 
 
 ### Limit of Detection Filtering
-In order to determine the minimal abundance of *Prochlorococcus* and *Synechococcus*, we performed simulations described in publication listed in the [Publication](#publication) section. 
-
-We recommend the 5% false positive rate threshold for accurate cluster/clade/grade delineations.
+To assess the accuracy of *Prochlorococcus* and *Synechococcus* cluster/clade/grade classifications, we generated mock metagenome sequence datasets and conducted simulations following the methods outlined in Coe et al. (2025) to calculate misclassification rates. To maintain misclassification rates below either 10% or 5%, we determined the minimum *Prochlorococcus*:*Synechococcus* (or vice versa) ratios, as detailed below. For broader classifications at the cluster or ecotype level, a 10% misclassification rate is sufficient.  However, for more precise subcluster/clade/grade delineations, we recommend using a 5% false positive rate threshold.
 
 **5% Misclassification Parameters** (Cluster/Grade/Clade Level  Identification):  
 - *Prochlorococcus* Abundance > 0.57% 
