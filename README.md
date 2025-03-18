@@ -255,5 +255,8 @@ Scripts used for genome subsetting and read simulation are located in the [valid
   - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
 
 
+## Visualization
+For visualization of clade/grade/cluster composition, we have devised a list of HEX color codes, which are located in the [taxon_colors](docs/taxon_colors) directory. 
+
 ## Intermediate Files
 This workflow produces several intermediate files that may be useful for additional analysis. Descriptions of these files can be found [here](docs/readme_extras/intermediate_files.md). 

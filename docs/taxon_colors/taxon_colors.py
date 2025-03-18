@@ -7,18 +7,12 @@ colors = {
     'AMZ-III': '#40E0D0', 
     'HLI': "#008000",  
     'HLII-HLVI': "#fdc60d",  
-    'HLII': "#ffce47",  
-    'HLVI': "#ff9747",  
     'LLI': "#6495ED",  
     'LLII-LLIII': "#DA70D6",  
-    'LLII': "#e096d0",  
-    'LLIII': "#c696e0",  
     'LLIV': "#FF3131",  
     'LLVII': "#00008B",  
     'LLVIII': '#F4A384',  
     'HLIII-HLIV': "#FF7518",  
-    'HLIII': "#56cedb",  
-    'HLIV': "#56db9f",  
 
     "5.1A-AG676E04": "#CC0003", 
     '5.1A-EnvC-UC-A': "#FF69B4",  
@@ -45,6 +39,4 @@ colors = {
     '5.2': '#CD853F', 
     '5.3': '#FF8C00',
     "RSCCF101": "#FFCC99", 
-
-    'Heterotroph': '#cd633f', 
 }
