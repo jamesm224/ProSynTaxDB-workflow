@@ -223,32 +223,32 @@ The output file `normalized_counts.tsv` contains normalized genome equivalent fo
   - `genome_equivalents`: normalized abundance of classified ecotype/cluster/clade/grade in sample 
     - Refer to "Read Normalization" Step in [Pipeline Workflow](#pipeline-workflow) for more information on how this value was calculated 
 
-### Limit of Detection Filtering
+## Limit of Detection Filtering
 To assess the accuracy of *Prochlorococcus* and *Synechococcus* cluster/clade/grade classifications, we generated mock metagenome sequence datasets and conducted simulations following the methods outlined in Coe et al. (2025) to calculate misclassification rates. To maintain misclassification rates below either 10% or 5%, we determined the minimum *Prochlorococcus*:*Synechococcus* (or vice versa) ratios, as detailed below. For broader classifications at the cluster or ecotype level, a 10% misclassification rate is sufficient.  However, for more precise subcluster/clade/grade delineations, we recommend using a 5% false positive rate threshold.
 
 Scripts used for genome subsetting and read simulation are located in the [validation](validation) directory. 
 
-#### *Prochlorococcus* Filtering Parameters
-##### 5% Misclassification Parameters  
+### *Prochlorococcus* Filtering Parameters
+#### 5% Misclassification Parameters  
 - *Prochlorococcus* Abundance > 0.57% 
   - Counts of *Prochlorococcus* reads out of *all* classified reads 
 - Ratio of *Prochlorococcus*:*Synechococcus* > 0.43
   - Ratio calculated by counts of *Prochlorococcus* divided by counts of *Synechococcus*
 
-##### 10% Misclassification Parameters
+#### 10% Misclassification Parameters
 - *Prochlorococcus* Abundance > 0.28% 
   - Counts of *Prochlorococcus* reads out of all classified reads 
 - Ratio of *Prochlorococcus*:*Synechococcus* > 0.24
   - Ratio calculated by counts of *Prochlorococcus* divided by counts of *Synechococcus*
 
-#### *Synechococcus* Filtering Parameters
-##### 5% Misclassification Parameters  
+### *Synechococcus* Filtering Parameters
+#### 5% Misclassification Parameters  
 - *Synechococcus* Abundance > 0.09% 
   - Counts of *Synechococcus* reads out of all classified reads 
 - Ratio *Synechococcus*:*Prochlorococcus* > 0.2 
   - Ratio calculated by counts of *Synechococcus* divided by counts of *Prochlorococcus*
 
-##### 10% Misclassification Parameters
+#### 10% Misclassification Parameters
 - *Synechococcus* Abundance > 0.04% 
   - Counts of *Synechococcus* reads out of *all* classified reads 
 - Ratio *Synechococcus*:*Prochlorococcus* > 0.10
