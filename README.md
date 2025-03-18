@@ -41,7 +41,7 @@ Here we present ProSynTaxDB, a curated protein sequence database and accompanyin
        git clone https://github.com/jamesm224/ProSynTaxDB-workflow/
 
 ### Installing ProSynTaxDB
-All files associated with this workflow can be downloaded from the [Zenodo repository](https://zenodo.org/records/14889681?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjEwM2VjMmJlLTU2NzEtNDEyNC1hZTQwLWY0NDFkNzUwMTU4OSIsImRhdGEiOnt9LCJyYW5kb20iOiI4NjkwMTllMGQ4MWYyYTU1MzBkMDYzYWU3MmYwOTNhNSJ9.9Nedfc8bI5MZ4Mio_TaWmq26RYLHCf2mSdXpupnHUFoDb9CuAKTdL7cb88SeiSA1bW0Ft-XYe1YlmkVtijWQbg) (DOI 10.5281/zenodo.14889681). 
+All files associated with this workflow can be downloaded from the [Zenodo repository](https://doi.org/10.5281/zenodo.14889681) (DOI 10.5281/zenodo.14889681). 
 
 Download the following **required** files into a directory on your machine: 
 1. ProSynTaxDB_nodes.dmp
