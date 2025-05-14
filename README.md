@@ -1,21 +1,21 @@
-# ProSynTaxDB Workflow: taxonomic classification of *Prochlorococcus* and *Synechococcus*
+# ProSynTax Workflow: taxonomic classification of *Prochlorococcus* and *Synechococcus*
 
 
 ## Introduction
-Here we present a workflow that accompanies ProSynTaxDB - a curated protein sequence database aimed at enhancing the taxonomic resolution of *Prochlorococcus* and *Synechococcus* classification. ProSynTaxDB includes proteins from 1,260 genomes of *Prochlorococcus* and *Synechococcus*, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTaxDB incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding *Prochlorococcus* and *Synechococcus*. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for *Prochlorococcus* or 0.09% of reads for *Synechococcus*. 
+Here we present a workflow that accompanies ProSynTax - a curated protein sequence database aimed at enhancing the taxonomic resolution of *Prochlorococcus* and *Synechococcus* classification. ProSynTax includes proteins from 1,260 genomes of *Prochlorococcus* and *Synechococcus*, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTax incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding *Prochlorococcus* and *Synechococcus*. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for *Prochlorococcus* or 0.09% of reads for *Synechococcus*. 
 
 ![Phylogenetic Tree](docs/images/figure1.svg "Phylogenetic Tree")
 
 
 ## Publication 
-This workflow and the accompanying ProSynTaxDB database is described in:  
+This workflow and the accompanying ProSynTax database is described in:  
 
          [ADD CITATION]
 
 ## Table of Contents
 * Setting up the Workflow
-  * [Installing the ProSynTaxDB Workflow](#installing-the-prosyntaxdb-workflow) 
-  * [Installing ProSynTaxDB](#installing-prosyntaxdb)
+  * [Installing the ProSynTax Workflow](#installing-the-prosyntax-workflow) 
+  * [Installing ProSynTax](#installing-prosyntax)
   * [Installing Dependencies](#installing-dependencies)
   * [Edit Workflow Parameters](#edit-workflow-parameters)
 * Running the Workflow
@@ -30,8 +30,8 @@ This workflow and the accompanying ProSynTaxDB database is described in:
 
 
 ## Setting up the Workflow
-### Installing the ProSynTaxDB Workflow
-1. Clone the ProSynTaxDB-workflow Github repository into your working directory:  
+### Installing the ProSynTax Workflow
+1. Clone the ProSynTax-workflow Github repository into your working directory:  
 
        # (optional) create a new project directory
        mkdir my_classification_project
@@ -39,15 +39,15 @@ This workflow and the accompanying ProSynTaxDB database is described in:
 
 - Create a copy of the workflow into your current path:  
 
-       git clone https://github.com/jamesm224/ProSynTaxDB-workflow/
+       git clone https://github.com/jamesm224/ProSynTax-workflow/
 
-### Installing ProSynTaxDB
+### Installing ProSynTax
 All files associated with this workflow can be downloaded from the [Zenodo repository](https://doi.org/10.5281/zenodo.14889681) (DOI 10.5281/zenodo.14889681). 
 
 Download the following **required** files into a directory on your machine: 
-1. ProSynTaxDB_nodes.dmp
-2. ProSynTaxDB_names.dmp
-3. ProSynTaxDB_file.fmi
+1. ProSynTax_nodes.dmp
+2. ProSynTax_names.dmp
+3. ProSynTax_file.fmi
 4. CyCOG6.dmnd
 
 - **Note**: The path to these files will be needed later in the `inputs/config.yaml` file in step 1 of section [Edit Workflow Parameters](#edit-workflow-parameters). 
@@ -90,12 +90,12 @@ Download the following **required** files into a directory on your machine:
 
 ### Edit Workflow Parameters
 #### 1. Edit ```inputs/config.yaml```:  
-This is the experimental configuration file, where you will specify ProSynTaxDB file paths, directory paths, and more. 
+This is the experimental configuration file, where you will specify ProSynTax file paths, directory paths, and more. 
 
 - **Required** edits:  
-  - `nodes_file`: path to your installation of ProSynTaxDB_nodes.dmp file for Kaiju (completed earlier in step [Installing ProSynTaxDB](#installing-prosyntaxdb)). 
-  - `names_file`: path to your installation of ProSynTaxDB_names.dmp file for Kaiju. 
-  - `fmi_file`: path to your installation of ProSynTaxDB_file.fmi file for Kaiju. 
+  - `nodes_file`: path to your installation of ProSynTax_nodes.dmp file for Kaiju (completed earlier in step [Installing ProSynTax](#installing-prosyntax)). 
+  - `names_file`: path to your installation of ProSynTax_names.dmp file for Kaiju. 
+  - `fmi_file`: path to your installation of ProSynTax_file.fmi file for Kaiju. 
   - `diamond_file`: path to your installation of CyCOG6.dmnd database file for BLAST. 
   - `genus_list`: list of genus you would like to extract raw read count for. 
     - Default: ['Synechococcus', 'Prochlorococcus', 'unclassified']
@@ -164,7 +164,7 @@ We have some tips for troubleshooting and debugging for common errors located [h
 
 
 ## Pipeline Workflow
-Below is a description of the steps in ProSynTaxDB workflow. 
+Below is a description of the steps in ProSynTax workflow. 
 
 ![Workflow Overview](docs/images/figure2.svg "Pipeline Workflow")
 
