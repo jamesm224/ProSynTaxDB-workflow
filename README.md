@@ -2,13 +2,13 @@
 
 
 ## Introduction
-Here we present a workflow that accompanies ProSynTax - a curated protein sequence database aimed at enhancing the taxonomic resolution of *Prochlorococcus* and *Synechococcus* classification. ProSynTax includes proteins from 1,260 genomes of *Prochlorococcus* and *Synechococcus*, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTax incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding *Prochlorococcus* and *Synechococcus*. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for *Prochlorococcus* or 0.09% of reads for *Synechococcus*. 
+Here we present a workflow that accompanies ProSynTax - a curated protein sequence dataset aimed at enhancing the taxonomic resolution of *Prochlorococcus* and *Synechococcus* classification. ProSynTax includes proteins from 1,260 genomes of *Prochlorococcus* and *Synechococcus*, including single amplified genomes, high-quality draft genomes, and newly closed genomes. Additionally, ProSynTax incorporates proteins from 27,799 genomes of marine heterotrophic bacteria, archaea, and viruses to assess microbial and viral communities surrounding *Prochlorococcus* and *Synechococcus*. This resource enables accurate classification of picocyanobacterial clusters/clades/grades in metagenomic data – even when present at 0.60% of reads for *Prochlorococcus* or 0.09% of reads for *Synechococcus*. 
 
 ![Phylogenetic Tree](docs/images/figure1.svg "Phylogenetic Tree")
 
 
 ## Publication 
-This workflow and the accompanying ProSynTax database is described in:  
+This workflow and the accompanying ProSynTax dataset is described in:  
 
          [ADD CITATION]
 
@@ -96,7 +96,7 @@ This is the experimental configuration file, where you will specify ProSynTax fi
   - `nodes_file`: path to your installation of ProSynTax_nodes.dmp file for Kaiju (completed earlier in step [Installing ProSynTax](#installing-prosyntax)). 
   - `names_file`: path to your installation of ProSynTax_names.dmp file for Kaiju. 
   - `fmi_file`: path to your installation of ProSynTax_file.fmi file for Kaiju. 
-  - `diamond_file`: path to your installation of CyCOG6.dmnd database file for BLAST. 
+  - `diamond_file`: path to your installation of CyCOG6.dmnd dataset file for BLAST. 
   - `genus_list`: list of genus you would like to extract raw read count for. 
     - Default: ['Synechococcus', 'Prochlorococcus', 'unclassified']
     - "unclassified": include reads that are labeled "unclassified" or "cannot be assigned to a (non-viral) genus" by Kaiju. 
