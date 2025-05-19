@@ -6,7 +6,6 @@ Here we present a workflow that accompanies ProSynTax - a curated protein sequen
 
 ![Phylogenetic Tree](docs/images/figure1.svg "Phylogenetic Tree")
 
-
 ## Publication 
 This workflow and the accompanying ProSynTax dataset is described in:  
          [ADD CITATION]
