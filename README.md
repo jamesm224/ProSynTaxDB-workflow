@@ -9,7 +9,6 @@ Here we present a workflow that accompanies ProSynTax - a curated protein sequen
 
 ## Publication 
 This workflow and the accompanying ProSynTax dataset is described in:  
-
          [ADD CITATION]
 
 ## Table of Contents
