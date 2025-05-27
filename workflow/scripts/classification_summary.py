@@ -23,7 +23,7 @@ def process_kaiju_summary(fpath, genus_list):
     df['taxon_name'] = df['taxon_name'].str.strip()  # remove whitespace, if any 
 
     # convert "cannot be assigned to a (non-viral) genus" into "unclassified"
-    df['taxon_name'] = df['taxon_name'].str.replace("cannot be assigned to a (non-viral) genus", "unclassified")
+    # df['taxon_name'] = df['taxon_name'].str.replace("cannot be assigned to a (non-viral) genus", "unclassified")
 
     # sum rows that are duplicates (i.e. "unclassified")
     df = df.groupby('taxon_name', as_index=False).sum()
