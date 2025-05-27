@@ -11,8 +11,8 @@ from pathlib import Path
 
 # COMMAND LINE ARGUMENTS:
 parser = argparse.ArgumentParser()
-parser.add_argument("genome2ecotype", help="Path to genome2ecotype.tsv file generated in PrepGenomeDB step.")
-parser.add_argument("reformatted_genomes", help="Path to directory with reformatted genomes from PrepGenomeDB step.")
+parser.add_argument("genome2ecotype", help="Path to genome2ecotype.tsv file generated in PrepGenome step.")
+parser.add_argument("reformatted_genomes", help="Path to directory with reformatted genomes from PrepGenome step.")
 parser.add_argument("outdir", help="Path to directory for output.")
 args = parser.parse_args()
 

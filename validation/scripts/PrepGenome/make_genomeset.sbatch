@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --job-name=make_db
+#SBATCH --job-name=make_genomset
 #SBATCH --time 5-0                         
 #SBATCH -p sched_mit_chisholm              
 #SBATCH -c 1                               
@@ -11,4 +11,4 @@ source activate data
 prosyn_classification="data/GorgAMZ_classification.xlsx"
 genome_sources="path/to/all/genomes"  # path to dir with all genomes in database
 
-python3 MakeGenomeDB.py $prosyn_classification $genome_sources
+python3 MakeGenome.py $prosyn_classification $genome_sources

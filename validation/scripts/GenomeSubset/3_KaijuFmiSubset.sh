@@ -15,7 +15,7 @@ echo CPU requested: ${SLURM_CPUS_PER_TASK}
 echo SLURM array task ID: ${SLURM_ARRAY_TASK_ID}
 
 # path to fasta with all the proteins 
-fasta_file=path/to/final_MARMICRODB2_viruses.faa
+fasta_file=path/to/ProSynTax.faa
 
 # output directory 
 outdir=path/to/output/directory

@@ -7,7 +7,7 @@ from pathlib import Path
 
 # COMMAND LINE ARGUMENTS:
 parser = argparse.ArgumentParser()
-parser.add_argument("genome2ecotype", help="Path to genome2ecotype.tsv file generated in PrepGenomeDB step.")
+parser.add_argument("genome2ecotype", help="Path to genome2ecotype.tsv file generated in PrepGenome step.")
 parser.add_argument("taxon_group", nargs="?", default="Prochlorococcus", help="Genome group for subsetting. [default: Prochlorococcus]")
 parser.add_argument("subset_num", nargs="?", default=10, help="Number of times to subset genome. [default: 10]")
 args = parser.parse_args()
