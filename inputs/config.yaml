@@ -2,9 +2,9 @@ input:
   sample table: inputs/samples.tsv
   adapter_file: inputs/all_illumina_adapters.fa
   cycog_file: inputs/cycog_len.tsv
-  nodes_file: /path/to/ProSynTaxDB_nodes.dmp
-  names_file: /path/to/ProSynTaxDB_names.dmp
-  fmi_file: /path/to/ProSynTaxDB.fmi
+  nodes_file: /path/to/ProSynTax_nodes.dmp
+  names_file: /path/to/ProSynTax_names.dmp
+  fmi_file: /path/to/ProSynTax.fmi
   diamond_file: /path/to/CyCOG6.dmnd
   
 
